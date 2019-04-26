@@ -1,0 +1,170 @@
+<!DOCTYPE html>
+<html>
+
+<head>
+  <meta charset="utf-8" />
+  <meta http-equiv="X-UA-Compatible" content="IE=edge,chrome=1" />
+  <meta name="viewport" content="width=device-width, initial-scale=1">
+  <title>页面预览</title>
+  <script type="text/javascript" src="js/jquery-1.10.2.min.js"></script>
+  <script type="text/javascript" src="js/a.whir.search.js"></script>
+  <script type="text/javascript" src="js/a.whir.menu.js"></script>
+  <link rel="stylesheet" type="text/css" href="css/responsive.css" />
+  <!--[if lt IE 9]>
+      <script type="text/javascript" src="js/respond.js"></script>
+    <![endif]-->
+  <!--[if lt IE 9]>
+      <script type="text/javascript" src="js/html5shiv.v3.72.min.js"></script>
+    <![endif]-->
+  <link rel="stylesheet" type="text/css" href="css/style.css" />
+</head>
+
+<body>
+	<!--Top002070开始-->
+	<div class="Top002070">
+		<header class="header clearfix Public_nav_style auto auto_1200">
+			<div class="header-left"><a href="index.shtml" class="logo"><img src="images/logo.png" /></a></div>
+			<div class="header-mid">
+				<nav class="header-menu clearfix sub-vertical sub-slideDown">
+					<ul class="ul clearfix">
+						<li><em><a href="index.shtml">首 页</a></em></li>
+						<li><em><a href="#">关于我们</a></em>
+							<div class="sub clearfix">
+								<div class="sub-menu">
+									<dl>
+										<dt><a href="about.shtml">公司简介</a></dt>
+										<dt><a href="#">品牌文化</a></dt>
+									</dl>
+								</div>
+							</div>
+						</li>
+						<li><em><a href="#">产品中心</a></em>
+							<div class="sub clearfix">
+								<div class="sub-menu">
+									<dl>
+										<dt><a href="list.shtml">保健食品</a></dt>
+										<dt><a href="#">食品</a></dt>
+									</dl>
+								</div>
+							</div>
+						</li>
+						<li><em><a href="news.shtml">新闻资讯</a></em>
+							<div class="sub clearfix hide-sub">
+								<div class="sub-menu">
+									<dl>
+										<dt><a href="news.shtml">新闻资讯</a></dt>
+									</dl>
+								</div>
+							</div>
+						</li>
+						<li><em><a href="honors.shtml">荣誉资质</a></em>
+							<div class="sub clearfix hide-sub">
+								<div class="sub-menu">
+									<dl>
+										<dt><a href="honors.shtml">荣誉资质</a></dt>
+									</dl>
+								</div>
+							</div>
+						</li>
+						<li><em><a href="#">联系我们</a></em>
+							<div class="sub clearfix hide-sub">
+								<div class="sub-menu">
+									<dl>
+										<dt><a href="#">联系我们</a></dt>
+									</dl>
+								</div>
+							</div>
+						</li>
+					</ul>
+				</nav>
+			</div>
+			<dl class="header-right">
+				<dd class="top-search"> <a href="javascript:void(0);" class="open-search"></a>
+					<div class="search-box">
+						<!--search-->
+						<input type="text" class="text" id="TopKey" value="">
+						<a id="TopBtn" class="btn" href="javascript:void(0);"></a>
+						<!--search end-->
+
+					</div>
+				</dd>
+				<dd id="open_menu"><i></i></dd>
+			</dl>
+			<img src="./uploadfiles/banner4.gif" alt="" class="ys-banner">
+		</header>
+		<script>
+			//选中
+			var m = '0' //请移到各模版后删除
+			//打开搜索
+			$(".Top002070 .open-search").click(function (e) {
+				$(".Top002070 .top-search").addClass("top-search-on")
+			});
+			$(".Top002070 .top-search").bind("mouseleave", function () {
+				$(".Top002070 .top-search").removeClass("top-search-on")
+			});
+			//搜索
+			$("#TopBtn").jqSearch({
+				TxtVal: "请输入关键词",
+				KeyTxt1: "输入关键词搜索！",
+				KeyTxt2: "输入的关键词字数不要过多！",
+				KeyTxt3: "您输入的内容存在特殊字符！",
+				KeyId: "TopKey", //输入框id
+				KeyUrl: "/search/", //跳转链接
+				KeyHref: "key", //链接传值
+				Static: false //是否静态站
+			});
+		</script>
+	</div>
+	<!--Top002070结束-->
+  <!--Banner001948开始-->
+  <div class="Banner001948" data-role="part">
+    <div style="background-image:url(uploadfiles/Banner001948-img.jpg);"><img
+        src="uploadfiles/Banner001948-img_phone.jpg" /></div>
+  </div>
+  <!--Banner001948结束-->
+  <div class="ys-container">
+    <!-- Menu002252 Start -->
+    <div class="Menu002252" data-role="part">
+      <ul class="ul clearfix auto auto_1200">
+        <a id="nav1" href="#" class="border-style">公司简介</a>
+        <a id="nav2" href="#" class="border-style">品牌文化</a>
+      </ul>
+      <script>
+        var nav = "1";
+        $("#nav" + nav).addClass("aon");
+      </script>
+    </div>
+    <!-- Menu002252 End -->
+    <!-- RighInfo002228 Start -->
+    <div class="RighInfo002228" data-role="part">
+      <div class="auto">
+        <div class="single-header">
+          <h1>杭州胡庆余堂天然食品有限公司</h1>
+        </div>
+        <div class="single-content">
+          <p>
+            杭州胡庆余堂天然食品有限公司,系胡庆余堂集团及胡庆余堂国药号共同出资组建。坐落于国家级高新区杭州滨江的青春宝工业园内,南依冠山,北临钱塘江。注目于国内保健食品品种单一,精锐匮乏,及功能性食品良莠不齐,安全问题频发之现状,胡庆余堂深感肩负国药文化传承之重任,誓将中药融入百姓的生活当中。《黄帝内经》有“是故圣人不治已病治未病”之说,“药食同源”恰如其分地为这一学说作了注脚,调理保健,服用便捷,无副作用永远是“治未病”的不二法则。胡庆余堂有实力在这一领域做一名领航者。
+          </p>
+          <p class="no-textindent"><img src="uploadfiles/RighInfo002228-img1.jpg" alt="" /></p>
+          <p class="no-textindent clearfix"><img src="uploadfiles/RighInfo002228-img2.jpg" alt="" class="col2" /><img src="uploadfiles/RighInfo002228-img3.jpg" alt="" class="fr col2" /></p>
+          <p>公司完全按照国家食品药品监督管理局要求的保健食品生产条件进行布局,设有普通食品生产线、保健食品生产线,有前处理车间、洁净车间、专用的仓储和实验室。一尘不染的洁净区，全包式的隔离服，仔细消毒的膏瓶，将杂质阻隔在外，把品质坚守于言行。在制作上，精密的仪器，加上专业的人员，研制出一款款对应现代健康需求的膏滋。一道道严谨的工序，一次次反复的核查，只为生产出最绿色的产品。高效的流水线生产，将健康源源不断地输出。保质保量是胡庆余堂百年口碑的基石之一。</p>
+          <p>作为新一代的庆余人,我们将传承胡庆余堂“戒欺”宗旨,采办务真,修制务精。对于材料从源头把控，只取道地，品质上乘的原材料。例如玉仁玫白膏中的白芷为浙江杭白芷，玉竹为湖南邵阳湘玉竹，用好原料，产好产品。</p>
+        </div>
+      </div>
+    </div>
+    <!-- RighInfo002228 End -->
+  </div>
+  <!--Bottom001947开始-->
+  <div class="Bottom001947" data-role="part">
+    <footer>
+      <div class="logo"><a href="#"><img src="images/logo.png" /></a></div>
+      <p><span><a href="#">网站地图</a><i>|</i><a href="#">法律声明</a><i>|</i><a href="#">友情链接</a></span>© 2019
+        杭州胡庆余堂天然食品有限公司
+        All Rights Reserved. Designed by <a href="http://www.wanhu.com.cn" target="_blank">Wanhu</a></p>
+    </footer>
+  </div>
+  <!--Bottom001947结束-->
+
+</body>
+
+</html>
