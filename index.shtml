@@ -1,0 +1,326 @@
+<!DOCTYPE html>
+<html>
+
+<head>
+	<meta charset="utf-8" />
+	<meta http-equiv="X-UA-Compatible" content="IE=edge,chrome=1" />
+	<meta name="viewport" content="width=device-width, initial-scale=1">
+	<title>页面预览</title>
+	<script type="text/javascript" src="js/jquery-1.10.2.min.js"></script>
+	<script type="text/javascript" src="js/jquery.slick.js"></script>
+	<script type="text/javascript" src="js/carousel.min.2.3.4.js"></script>
+	<script type="text/javascript" src="js/a.whir.search.js"></script>
+	<script type="text/javascript" src="js/a.whir.menu.js"></script>
+	<link rel="stylesheet" type="text/css" href="css/responsive.css" />
+	<link rel="stylesheet" type="text/css" href="css/style.css" />
+	<!--[if lt IE 9]>
+      <script type="text/javascript" src="js/html5shiv.v3.72.min.js"></script>
+    <![endif]-->
+</head>
+
+<body>
+	<!--Top002070开始-->
+	<div class="Top002070">
+		<header class="header clearfix Public_nav_style auto auto_1200">
+			<div class="header-left"><a href="index.shtml" class="logo"><img src="images/logo.png" /></a></div>
+			<div class="header-mid">
+				<nav class="header-menu clearfix sub-vertical sub-slideDown">
+					<ul class="ul clearfix">
+						<li><em><a href="index.shtml">首 页</a></em></li>
+						<li><em><a href="#">关于我们</a></em>
+							<div class="sub clearfix">
+								<div class="sub-menu">
+									<dl>
+										<dt><a href="about.shtml">公司简介</a></dt>
+										<dt><a href="#">品牌文化</a></dt>
+									</dl>
+								</div>
+							</div>
+						</li>
+						<li><em><a href="#">产品中心</a></em>
+							<div class="sub clearfix">
+								<div class="sub-menu">
+									<dl>
+										<dt><a href="list.shtml">保健食品</a></dt>
+										<dt><a href="#">食品</a></dt>
+									</dl>
+								</div>
+							</div>
+						</li>
+						<li><em><a href="news.shtml">新闻资讯</a></em>
+							<div class="sub clearfix hide-sub">
+								<div class="sub-menu">
+									<dl>
+										<dt><a href="news.shtml">新闻资讯</a></dt>
+									</dl>
+								</div>
+							</div>
+						</li>
+						<li><em><a href="honors.shtml">荣誉资质</a></em>
+							<div class="sub clearfix hide-sub">
+								<div class="sub-menu">
+									<dl>
+										<dt><a href="honors.shtml">荣誉资质</a></dt>
+									</dl>
+								</div>
+							</div>
+						</li>
+						<li><em><a href="#">联系我们</a></em>
+							<div class="sub clearfix hide-sub">
+								<div class="sub-menu">
+									<dl>
+										<dt><a href="#">联系我们</a></dt>
+									</dl>
+								</div>
+							</div>
+						</li>
+					</ul>
+				</nav>
+			</div>
+			<dl class="header-right">
+				<dd class="top-search"> <a href="javascript:void(0);" class="open-search"></a>
+					<div class="search-box">
+						<!--search-->
+						<input type="text" class="text" id="TopKey" value="">
+						<a id="TopBtn" class="btn" href="javascript:void(0);"></a>
+						<!--search end-->
+
+					</div>
+				</dd>
+				<dd id="open_menu"><i></i></dd>
+			</dl>
+			<img src="./uploadfiles/banner4.gif" alt="" class="ys-banner">
+		</header>
+		<script>
+			//选中
+			var m = '0' //请移到各模版后删除
+			//打开搜索
+			$(".Top002070 .open-search").click(function (e) {
+				$(".Top002070 .top-search").addClass("top-search-on")
+			});
+			$(".Top002070 .top-search").bind("mouseleave", function () {
+				$(".Top002070 .top-search").removeClass("top-search-on")
+			});
+			//搜索
+			$("#TopBtn").jqSearch({
+				TxtVal: "请输入关键词",
+				KeyTxt1: "输入关键词搜索！",
+				KeyTxt2: "输入的关键词字数不要过多！",
+				KeyTxt3: "您输入的内容存在特殊字符！",
+				KeyId: "TopKey", //输入框id
+				KeyUrl: "/search/", //跳转链接
+				KeyHref: "key", //链接传值
+				Static: false //是否静态站
+			});
+		</script>
+	</div>
+	<!--Top002070结束-->
+	<!--Banner002720 star-->
+	<div class="Banner002720">
+		<div class="video">
+			<section class="ytable">
+				<section class="ytable-cell">
+					<article class="txt">
+						<a href="#"></a>
+					</article>
+				</section>
+			</section>
+		</div>
+		<ul class="slider ul">
+			<li><img src="uploadfiles/banner2.jpg"></li>
+			<li>
+				<picture>
+					<img src="uploadfiles/banner3.jpg">
+				</picture>
+			</li>
+			<li><img src="uploadfiles/banner4.jpg"></li>
+
+		</ul>
+		<script>
+			$('.Banner002720 .slider').slick({
+				arrows: false,
+				fade: true,
+				dots: true,
+				autoplay: true,
+				autoplaySpeed: 3000,
+				speed: 1500
+			});
+			$(".Banner002720 .slider .slick-dots").insertAfter($(".Banner002720 .video"));
+			//视频弹窗
+			$(".Banner002720 .play").click(function (e) {
+				var files = $(this).attr("rel");
+				$(".video-Banner002720").remove();
+				$('body').append(
+					"<div class='video-Banner002720'><div class='close'></div><section class='ytable'><section class='ytable-cell'><video src='" +
+					files + "' controls autoplay></video></section></section></div>");
+				videoclose()
+			});
+
+			function videoclose() {
+				$(".video-Banner002720 .close").click(function (e) {
+					$(".video-Banner002720").remove();
+				});
+			}
+		</script>
+	</div>
+	<!--Banner002720 end-->
+	<!--Floor000556-->
+	<div class="Floor000556">
+		<div class="title">
+			<img src="./uploadfiles/title1.png" alt="">
+		</div>
+		<div class="auto auto_1200">
+			<div class="tab"><span class="border-style">保健食品</span><span class="border-style">食品</span></div>
+			<div class="tab-info">
+				<div class="info">
+					<!--list-->
+					<div class="item">
+						<a href="产品中心详细页.shtml">
+							<div class="pic"><img src="uploadfiles/product11.png" /></div>
+							<p class="dot">破壁孢子粉</p>
+						</a>
+					</div>
+					<div class="item">
+						<a href="#">
+							<div class="pic"><img src="uploadfiles/product12.png" /></div>
+							<p class="dot">铁皮石斛</p>
+						</a>
+					</div>
+					<div class="item">
+						<a href="产品中心详细页.shtml">
+							<div class="pic"><img src="uploadfiles/product11.png" /></div>
+							<p class="dot">破壁孢子粉</p>
+						</a>
+					</div>
+					<div class="item">
+						<a href="#">
+							<div class="pic"><img src="uploadfiles/product12.png" /></div>
+							<p class="dot">铁皮石斛</p>
+						</a>
+					</div>
+					<!--list end-->
+				</div>
+				<div class="info">
+					<!--list-->
+					<div class="item">
+						<a href="#">
+							<div class="pic"><img src="uploadfiles/product21.png" /></div>
+							<p class="dot">人参黄精膏</p>
+						</a>
+					</div>
+					<div class="item">
+						<a href="#">
+							<div class="pic"><img src="uploadfiles/product22.png" /></div>
+							<p class="dot">玉苓玫白膏</p>
+						</a>
+					</div>
+					<div class="item">
+						<a href="#">
+							<div class="pic"><img src="uploadfiles/product21.png" /></div>
+							<p class="dot">人参黄精膏</p>
+						</a>
+					</div>
+					<div class="item">
+						<a href="#">
+							<div class="pic"><img src="uploadfiles/product22.png" /></div>
+							<p class="dot">玉苓玫白膏</p>
+						</a>
+					</div>
+					<!--list end-->
+				</div>
+			</div>
+			<!--add-->
+			<div class="pro_list"></div>
+			<!--end-->
+		</div>
+		<script>
+			Floor000556('.Floor000556')
+
+			function Floor000556(c) {
+				$(c).find(".tab span").hover(function (e) {
+					var e = $(this).index()
+					$(this).addClass("on");
+					$(this).siblings().removeClass("on");
+					var html = $(c).find(".tab-info").find(".info").eq(e).html()
+					$(c).find('.owl-carousel').remove();
+					$(c).find(".pro_list").append("<div class='owl-carousel'>" + html + "</div>");
+					$(c).find('.owl-carousel').owlCarousel({
+						loop: true,
+						dots: false,
+						autoplay: true,
+						autoplaySpeed: 800,
+						autoplayTimeout: 3000,
+						responsiveClass: true,
+						responsive: {
+							0: {
+								items: 1,
+								margin: 0,
+							},
+							400: {
+								items: 2,
+								margin: 20,
+							},
+							700: {
+								items: 3,
+								margin: 30,
+							},
+							1100: {
+								items: 4,
+								margin: 50,
+							}
+						}
+					})
+				});
+				$(c).find(".tab span").eq(0).mouseover();
+			}
+		</script>
+	</div>
+	<!--Floor000556 end-->
+	<!--Floor001640开始-->
+	<div class="Floor001640" data-role="part">
+		<div class="title">
+			<img src="./uploadfiles/title2.png" alt="">
+		</div>
+		<div class="auto auto_1200 clearfix wrap">
+			<div class="txt">
+				<article class="info">
+					<!--star-->
+					<h2 style="font-size:24px;margin-top:0;">杭州胡庆余堂天然食品有限公司</h2>
+					<p>
+							胡庆余堂创建于清同治十三年(1874),在开创初期,在杭州水陆码头,有一批穿着号衣的员工,向行人免费发送“痧药”和“辟瘟丹”,还夹带着一本《胡庆余堂雪记简明丸散全集》。在《雪记》中,光膏滋类就罗列了20余种,有“枇杷叶膏”“雪梨膏”“益母膏”“夏枯草膏”等,其中有味膏剂叫“金钗石斛膏”,主治虚劳羸瘦、发热自汗等症,有补虚退热、清肺和胃之功能。这一源于清代的记载,不仅证明了胡庆余堂老药工百年前就已经认识到了石斛的不凡功效,更见证了从那时起秉承“戒欺”“采办务真、修制务精”的谆谆祖训。《雪记》中还记载了胡庆余堂自主研制和生产的“石斛夜光丸”。在胡庆余堂中药博物馆的鹤颈走廊上,至今还悬挂着当年36块丸药牌,“金钗石斛膏”“石斛夜光丸”赫立其中。可见,开发“石斛”,炼制膏滋,胡庆余堂更有一百多年的品质保障。
+						</p>
+					<p>
+						胡雪岩（1823－1885），本名胡光墉，幼名顺官，字雪岩，出生于安徽徽州绩溪，13岁起便移居浙江杭州。中国近代著名红顶商人，政治家，徽商代表人物。胡雪岩凭借其卓越的商业才能，利用过手的官银在上海筹办私人钱庄，后在全国各地设立了“阜康”钱庄分号，被称为“活财神”。在杭州创立了“胡庆余堂”中药店，制“避瘟丹”、“行军散”、“八宝丹”供军民之需，药店传承至今，赢得“江南药王”之美誉。</p>
+						<p>胡雪岩亲手经营胡庆余堂不过十年，而几度兴衰、几易其主的胡庆余堂却历经140多年，他的金字招牌及“戒欺”堂规依然不褪色，江南药王地位依然不动摇。杭州胡庆余堂承南宋《太平惠民和剂局方》，广纳名医传统良方，精心调制庆余丸、散、膏、丹等，济世宁人。
+					</p>
+
+					<!--end-->
+				</article>
+				<a href="#" class="all_more">了解详细</a>
+			</div>
+			<div class="pic"><img src="uploadfiles/Floor001640-img.jpg" /></div>
+		</div>
+	</div>
+	</div>
+	<!--Floor001640结束-->
+	<!--Bottom001947开始-->
+	<div class="Bottom001947" data-role="part">
+		<footer>
+			<div class="logo"><a href="#"><img src="images/logo.png" /></a></div>
+			<p><span><a href="#">网站地图</a><i>|</i><a href="#">法律声明</a><i>|</i><a href="#">友情链接</a></span>© 2019 杭州胡庆余堂天然食品有限公司
+				All Rights Reserved. Designed by <a href="http://www.wanhu.com.cn" target="_blank">Wanhu</a></p>
+		</footer>
+	</div>
+	<!--Bottom001947结束-->
+
+	<script>
+		const img = $('.Floor001640 .pic img');
+		const txt = $('.Floor001640 .txt');
+
+		const height = txt.height();
+		console.log(height);
+		img.css('height', height);
+	</script>
+</body>
+
+</html>
