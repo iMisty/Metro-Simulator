@@ -18,8 +18,6 @@
       const ctx = document.getElementById('canvas').getContext('2d');
       ctx.rect(0,0,700,176);
       ctx.stroke();
-      /* eslint-disable */
-      console.log('a');
       ctx.fillStyle = this.$data.background;
       ctx.fillRect(0,0,700,32);
    }
