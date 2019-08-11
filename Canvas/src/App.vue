@@ -1,14 +1,16 @@
 <template>
   <div id="app">
-    <Home></Home>
+    <Canvas></Canvas>
   </div>
 </template>
 
 <script>
-import Home from './views/Home'
+import Canvas from './components/Canvas';
+
 export default {
+  name: 'app',
   components: {
-    Home
+    Canvas
   }
 }
 </script>
@@ -20,7 +22,5 @@ export default {
   -moz-osx-font-smoothing: grayscale;
   text-align: center;
   color: #2c3e50;
-  max-width: 800px;
-  margin: 0 auto;
 }
 </style>
