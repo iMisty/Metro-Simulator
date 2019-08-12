@@ -1,6 +1,32 @@
 <template>
   <div id="home">
-    
+    <section class="left">
+      <article class="left-next">
+        <h2>下站</h2>
+        <h3>Next</h3>
+      </article>
+      <article class="left-text">
+        <h2>{{ sNext }}</h2>
+        <h3>{{ eNext }}</h3>
+      </article>
+    </section>
+    <section class="medium">
+      <article class="medium-text">
+        <h1>{{ sStation }}</h1>
+        <h2>{{ eStation }}</h2>
+      </article>
+    </section>
+    <section class="right">
+      <article class="right-medic">
+        <span>{{ Line }}</span>
+        <span>{{ nStation }}</span>
+      </article>
+      <article class="right-station">
+        <h4>2</h4>
+        <h5>站台</h5>
+        <h6>Platform</h6>
+      </article>
+    </section>
   </div>
 </template>
 
@@ -9,6 +35,17 @@
 export default {
   name: 'home',
   components: {
+    
+  },
+  data() {
+    return{
+    sStation: '一大团广场',
+    eStation: 'YiDaTuan Square',
+    sNext: '北京路',
+    eNext: 'BeiJing Lu',
+    Line: '10',
+    nStation: '40'
+    }
   }
 }
 </script>
@@ -16,6 +53,10 @@ export default {
 <style lang="less" scoped>
   #home{
     position: relative;
+    display: flex;
+    flex-direction: row;
+    justify-content: space-between;
+    align-items: center;
     margin: 0 auto;
     width: 700px;
     height: 168px;
