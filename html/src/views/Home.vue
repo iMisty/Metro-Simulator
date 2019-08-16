@@ -1,6 +1,6 @@
 <template>
   <div id="home">
-    <section class="left">
+    <section class="left flex row">
       <article class="left-next">
         <h2>下站</h2>
         <h3>Next</h3>
