@@ -58,6 +58,7 @@ export default {
     justify-content: space-between;
     align-items: center;
     margin: 0 auto;
+    padding: 0 2rem;
     width: 700px;
     height: 168px;
     background-color: #fff;
