@@ -1,6 +1,6 @@
 <template>
   <div id="home">
-    <section class="left flex row">
+    <section class="left flex row flex-1">
       <article class="left-next">
         <h2>下站</h2>
         <h3>Next</h3>
@@ -10,13 +10,13 @@
         <h3>{{ eNext }}</h3>
       </article>
     </section>
-    <section class="medium">
+    <section class="medium flex column flex-2">
       <article class="medium-text">
         <h1>{{ sStation }}</h1>
         <h2>{{ eStation }}</h2>
       </article>
     </section>
-    <section class="right">
+    <section class="right flex row flex-1">
       <article class="right-medic">
         <span>{{ Line }}</span>
         <span>{{ nStation }}</span>
