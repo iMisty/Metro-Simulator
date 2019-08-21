@@ -1,11 +1,11 @@
 <template>
   <div id="home">
     <section class="left flex row flex-1">
-      <article class="left-next">
+      <article class="left-next sec-text">
         <h2>下站</h2>
         <h3>Next</h3>
       </article>
-      <article class="left-text">
+      <article class="left-text sec-text">
         <h2>{{ sNext }}</h2>
         <h3>{{ eNext }}</h3>
       </article>
