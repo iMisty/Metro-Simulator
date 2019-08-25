@@ -16,10 +16,10 @@
         <h2>{{ eStation }}</h2>
       </article>
     </section>
-    <section class="right flex row flex-1">
+    <section class="right flex row flex-1 center">
       <article class="right-medic">
-        <span>{{ Line }}</span>
-        <span>{{ nStation }}</span>
+        <span class="medic-left">{{ Line }}</span>
+        <span class="medic-right">{{ nStation }}</span>
       </article>
       <article class="right-station">
         <h4>2</h4>
