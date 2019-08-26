@@ -1,8 +1,10 @@
 import Vue from 'vue'
 import App from './App.vue'
 //import router from './router'
-import './assets/global.less'
-import './assets/right.less'
+import './assets/less/line.less'
+import './assets/less/global.less'
+import './assets/less/medium.less'
+import './assets/less/right.less'
 
 Vue.config.productionTip = false
 
