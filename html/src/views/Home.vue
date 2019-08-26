@@ -1,5 +1,5 @@
 <template>
-  <div id="home">
+  <div id="home line-4">
     <section class="left flex row flex-1">
       <article class="left-next sec-text">
         <h2>下站</h2>
@@ -21,7 +21,7 @@
         <span class="medic-left">{{ Line }}</span>
         <span class="medic-right">{{ nStation }}</span>
       </article>
-      <article class="right-station">
+      <article class="right-station flex column center">
         <h4>2</h4>
         <h5>站台</h5>
         <h6>Platform</h6>
@@ -63,5 +63,11 @@ export default {
     height: 168px;
     background-color: #fff;
     border: 1px solid #333;
+    &::after{
+      content: '';
+      position: absolute;
+      bottom: 0;
+      left: 0;
+    }
   }
 </style>
