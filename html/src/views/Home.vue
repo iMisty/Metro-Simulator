@@ -1,5 +1,5 @@
 <template>
-  <div id="home line-4">
+  <div id="home" class="line-4 flex row center">
     <section class="left flex row flex-1">
       <article class="left-next sec-text">
         <h2>下站</h2>
