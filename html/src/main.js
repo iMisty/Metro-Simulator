@@ -3,6 +3,7 @@ import App from './App.vue'
 //import router from './router'
 import './assets/less/line.less'
 import './assets/less/global.less'
+import './assets/less/left.less'
 import './assets/less/medium.less'
 import './assets/less/right.less'
 
