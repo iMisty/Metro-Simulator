@@ -40,7 +40,7 @@ export default {
   data() {
     return{
     sStation: '一大团广场',
-    eStation: 'YiDaTuan Square',
+    eStation: 'Higher Education Mega Center N.',
     sNext: '北京路',
     eNext: 'BeiJing Lu',
     Line: '10',
