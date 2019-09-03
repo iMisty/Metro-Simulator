@@ -1,11 +1,11 @@
 <template>
   <div id="home" class="line-4 flex row center">
     <section class="left flex row flex-1">
-      <article class="left-next sec-text">
+      <article class="left-next sec-text flex column next-text">
         <h2>下站</h2>
         <h3>Next</h3>
       </article>
-      <article class="left-text sec-text">
+      <article class="left-text sec-text flex column next-title">
         <h2>{{ sNext }}</h2>
         <h3>{{ eNext }}</h3>
       </article>
@@ -39,10 +39,10 @@ export default {
   },
   data() {
     return{
-    sStation: '一大团广场',
+    sStation: '大学城北',
     eStation: 'Higher Education Mega Center N.',
-    sNext: '北京路',
-    eNext: 'BeiJing Lu',
+    sNext: '大学城南',
+    eNext: 'Higher Education Mega Center S.',
     Line: '10',
     nStation: '40'
     }
