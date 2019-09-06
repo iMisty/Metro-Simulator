@@ -1,5 +1,5 @@
 <template>
-  <div id="home" class="line-4 flex row center">
+  <div id="home" class="line-4 flex row center line4">
     <section class="left flex row flex-1">
       <article class="left-next sec-text flex column next-text">
         <h2>下站</h2>
@@ -68,6 +68,8 @@ export default {
       position: absolute;
       bottom: 0;
       left: 0;
+      width: 100%;
+      height: 1rem;      
     }
   }
 </style>
