@@ -1,5 +1,6 @@
 <template>
   <div id="options" class="flex column tWrap">
+    <section class="this-station flex row">
     <label>
       <h3>当前站(中文):</h3>
       <input type="text" placeholder="中文" v-model="sStation">
@@ -8,7 +9,9 @@
       <h3>当前站(英文):</h3>
       <input type="text" placeholder="英文" v-model="eStation">
     </label>
-    <label>
+    </section>
+    <section class="next-station flex row">
+          <label>
       <h3>下一站(中文):</h3>
       <input type="text" placeholder="中文" v-model="sNext">
     </label>
@@ -16,7 +19,9 @@
       <h3>下一站(英文):</h3>
       <input type="text" placeholder="英文" v-model="eNext">
     </label>
-    <label>
+    </section>
+    <section class="line-options flex row">
+          <label>
       <h3>线路:</h3>
       <select name="line" id="line-options" v-model="Line">
         <option value="1">1 号线</option>
@@ -61,6 +66,7 @@
       <h3>站点编号:</h3>
       <input type="text" v-model="nStation">
     </label>
+    </section>
   </div>
 </template>
 
