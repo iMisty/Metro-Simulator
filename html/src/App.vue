@@ -1,14 +1,16 @@
 <template>
   <div id="app">
     <Home></Home>
+    <Options></Options>
   </div>
 </template>
 
 <script>
-import Home from './views/Home'
+import Home from './views/Home';
+import Options from './components/options';
 export default {
   components: {
-    Home
+    Home,Options
   }
 }
 </script>
