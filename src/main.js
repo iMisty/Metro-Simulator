@@ -6,6 +6,7 @@ import './assets/less/global.less'
 import './assets/less/left.less'
 import './assets/less/medium.less'
 import './assets/less/right.less'
+import './assets/less/options.less'
 
 Vue.config.productionTip = false
 

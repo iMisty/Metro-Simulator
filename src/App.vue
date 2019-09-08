@@ -30,6 +30,7 @@ export default {
   max-width: 800px;
   margin: 8px auto;
   min-height: 100vh;
+  overflow: hidden;
   .copyright{
     position: absolute;
     bottom: 8px;
