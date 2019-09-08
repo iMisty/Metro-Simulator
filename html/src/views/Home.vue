@@ -21,7 +21,7 @@
         <span class="medic-left">{{ Line }}</span>
         <span class="medic-right">{{ nStation }}</span>
       </article>
-      <article class="right-station flex column center">
+      <article class="right-station flex column center line4">
         <h4>2</h4>
         <h5>站台</h5>
         <h6>Platform</h6>
@@ -31,11 +31,11 @@
 </template>
 
 <script>
-
+import options from '../components/options';
 export default {
   name: 'home',
   components: {
-    
+    options: 'options'
   },
   data() {
     return{
