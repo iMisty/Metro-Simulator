@@ -31,11 +31,9 @@
 </template>
 
 <script>
-import options from '../components/options';
 export default {
   name: 'home',
   components: {
-    options: 'options'
   },
   data() {
     return{
@@ -70,6 +68,19 @@ export default {
       left: 0;
       width: 100%;
       height: 1rem;      
+    }
+    &::before{
+      content: '';
+      position: absolute;
+      bottom: 4px;
+      left: 50%;
+      width: 5rem;
+      height: 2rem;
+      border: 1px solid #999;
+      background: linear-gradient(90deg,#fff,84%,#888);
+      z-index: 4;
+      border-radius: 64%;
+      transform: translateX(-50%);
     }
   }
 </style>
