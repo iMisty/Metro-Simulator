@@ -1,29 +1,15 @@
-# html
+# 广州地铁版地铁族签名档生成器
 
-## Project setup
-```
-npm install
-```
+## 目前状况
+~~土建~~摸鱼完成度：87%
 
-### Compiles and hot-reloads for development
-```
-npm run serve
-```
+## 功能
+- 提供模拟广州地铁线路站牌的效果
+- 地铁族最大化签名档制作
+- 没了
 
-### Compiles and minifies for production
-```
-npm run build
-```
-
-### Run your tests
-```
-npm run test
-```
-
-### Lints and fixes files
-```
-npm run lint
-```
-
-### Customize configuration
-See [Configuration Reference](https://cli.vuejs.org/config/).
+## ~~北延线~~二期功能
+[] 多终端多大小匹配
+[] 更好的UI功能
+[] 使用Grid重新布局
+[] 提供颜色转换功能
