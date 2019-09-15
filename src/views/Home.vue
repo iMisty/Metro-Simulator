@@ -39,7 +39,7 @@ export default {
   },
   data() {
     return{
-      sStation: '大学城北',
+      sStation: '知识城',
       eStation: 'Sino-Singapore Guangzhou Knowledge City',
       sNext: '大学城南',
       eNext: 'Sino-Singapore Guangzhou Knowledge City',
