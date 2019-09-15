@@ -67,6 +67,7 @@
       <input type="text" v-model="nStation">
     </label>
     </section>
+    <span>{{sStation}},{{eStation}},{{sNext}},{{eNext}},{{Line}},{{nStation}},{{platform}}</span>
   </div>
 </template>
 
@@ -82,6 +83,38 @@ export default {
       Line: '10',
       nStation: '40',
       platform: '4'
+    }
+  },
+  methods:{
+  },
+  watch: {
+    'sStation' : function(newVal){
+      this.sStation = newVal;
+      console.log(newVal);
+    },
+    'eStation' : function(newVal) {
+      this.eStation = newVal;
+      console.log(newVal);
+    },
+    'sNext' : function(newVal) {
+      this.sNext = newVal;
+      console.log(newVal);
+    },
+    'eNext' : function(newVal) {
+      this.eNext = newVal;
+      console.log(newVal);
+    },
+    'Line' : function(newVal) {
+      this.Line = newVal;
+      console.log(newVal);
+    },
+    'nStation' : function(newVal) {
+      this.nStation = newVal;
+      console.log(newVal);
+    },
+    'platform' : function(newVal) {
+      this.platform = newVal;
+      console.log(newVal);
     }
   }
 }
