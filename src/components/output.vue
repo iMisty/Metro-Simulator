@@ -1,6 +1,6 @@
 <template>
 <div class="output">
-  <article>生成签名图</article>
+  <button @click="alert">生成签名图</button>
 </div>
 </template>
 
@@ -10,6 +10,11 @@ export default{
     name: 'output'
     return{
       
+    }
+  },
+  methods:{
+    alert: function(){
+      alert('该功能尚未启用');
     }
   }
 }
