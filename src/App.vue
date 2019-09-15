@@ -2,7 +2,7 @@
   <div id="app">
     <Home></Home>
     <Options></Options>
-    <Button></Button>
+    <inst-canvas></inst-canvas>
     <article class="copyright">
       <h3>2019 Wednesday Teatime.Made by Koeri</h3>
     </article>
@@ -12,10 +12,10 @@
 <script>
 import Home from './views/Home';
 import Options from './components/options';
-import Button from './components/button';
+import instCanvas from './components/output';
 export default {
   components: {
-    Home,Options,Button
+    Home,Options,instCanvas
   }
 }
 </script>
