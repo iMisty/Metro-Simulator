@@ -38,13 +38,16 @@ export default {
   },
   data() {
     return{
-    sStation: '大学城北',
-    eStation: 'Higher Education Mega Center N.',
-    sNext: '大学城南',
-    eNext: 'Higher Education Mega Center S.',
-    Line: '10',
-    nStation: '40'
+      sStation: '大学城北',
+      eStation: 'Higher Education Mega Center N.',
+      sNext: '大学城南',
+      eNext: 'Higher Education Mega Center S.',
+      Line: '10',
+      nStation: '40'
     }
+  },
+  methods: {
+    
   }
 }
 </script>
