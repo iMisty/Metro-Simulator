@@ -32,6 +32,7 @@
 </template>
 
 <script>
+import Bus from '../bus.js';
 export default {
   name: 'home',
   components: {
@@ -39,15 +40,42 @@ export default {
   data() {
     return{
       sStation: '大学城北',
-      eStation: 'Higher Education Mega Center N.',
+      eStation: 'Sino-Singapore Guangzhou Knowledge City',
       sNext: '大学城南',
-      eNext: 'Higher Education Mega Center S.',
+      eNext: 'Sino-Singapore Guangzhou Knowledge City',
       Line: '10',
       nStation: '40'
     }
   },
+  mounted(){
+    this.getData();
+  },
   methods: {
-    
+    getData() {
+      const vm = this;
+      Bus.$on('getSStation',getSStation => {
+        vm.sStation = getSStation;
+      });
+      Bus.$on('getEStation',getEStation => {
+        vm.eStation = getEStation;
+      });
+      Bus.$on('getLine',getLine => {
+        vm.Line = getLine;
+      });
+      Bus.$on('getENext',getENext => {
+        vm.eNext = getENext;
+      });
+      Bus.$on('getNStation',getNStation => {
+        vm.nStation = getNStation;
+      });
+    }
+  },
+  watch:{
+    'sStation': function(){this.getData();},
+    'eStation': function(){this.getData();},
+    'sNext' : function(){this.getData();},
+    'eNext': function(){this.getData();},
+    'nStation': function(){this.getData();},
   }
 }
 </script>
