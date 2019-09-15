@@ -3,11 +3,11 @@
     <section class="this-station flex row">
     <label>
       <h3>当前站(中文):</h3>
-      <input type="text" placeholder="中文" v-model="sStation">
+      <input type="text" placeholder="中文" v-model="sStation" @keyup="elementMyValue">
     </label>
     <label>
       <h3>当前站(英文):</h3>
-      <input type="text" placeholder="英文" v-model="eStation">
+      <input type="text" placeholder="英文" v-model="eStation" @keyup="elementMyValue">
     </label>
     </section>
     <section class="next-station flex row">
@@ -17,13 +17,13 @@
     </label>
     <label>
       <h3>下一站(英文):</h3>
-      <input type="text" placeholder="英文" v-model="eNext">
+      <input type="text" placeholder="英文" v-model="eNext" @keyup="elementMyValue">
     </label>
     </section>
     <section class="line-options flex row">
           <label>
       <h3>线路:</h3>
-      <select name="line" id="line-options" v-model="Line">
+      <select name="line" id="line-options" v-model="Line" @keyup="elementMyValue">
         <option value="1">1 号线</option>
         <option value="2">2 号线</option>
         <option value="3">3 号线</option>
@@ -52,7 +52,7 @@
     </label>
     <label>
       <h3>站台:</h3>
-      <select name="platform" id="platform" v-model="platform">
+      <select name="platform" id="platform" v-model="platform" @select="elementMyValue">
         <option value="1">1 站台</option>
         <option value="2" selected>2 站台</option>
         <option value="3">3 站台</option>
@@ -64,20 +64,21 @@
     </label>
     <label>
       <h3>站点编号:</h3>
-      <input type="text" v-model="nStation">
+      <input type="text" v-model="nStation" @keyup="elementMyValue">
     </label>
     </section>
     <span>{{sStation}},{{eStation}},{{sNext}},{{eNext}},{{Line}},{{nStation}},{{platform}}</span>
   </div>
 </template>
 
-<script lang="ts">
+<script>
+import Bus from '../bus.js';
 export default {
   name: 'options',
   data(){
     return{
       sStation: '大学城北',
-      eStation: 'Higher Education Mega Center N.',
+      eStation: 'Sino-Singapore Guangzhou Knowledge City',
       sNext: '大学城南',
       eNext: 'Higher Education Mega Center S.',
       Line: '10',
@@ -86,6 +87,20 @@ export default {
     }
   },
   methods:{
+    elementMyValue: function(){
+      const getSStation = this.$data.sStation;
+      const getEStation = this.$data.eStation;
+      const getSNext = this.$data.sNext;
+      const getENext = this.$data.eNext;
+      const getLine = this.$data.Line;
+      const getNStation = this.$data.nStation;
+      const getPlatform = this.$data.platform;
+      Bus.$emit('getSStation',getSStation,getEStation,getSNext,getENext,getLine,getNStation,getPlatform);
+      Bus.$emit('getEStation',getEStation);
+      Bus.$emit('getSNext',getSNext);
+      Bus.$emit('getENext',getENext);
+      Bus.$emit('getNStation',getNStation);
+    }
   },
   watch: {
     'sStation' : function(newVal){
