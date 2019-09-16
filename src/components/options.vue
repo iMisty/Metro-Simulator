@@ -3,27 +3,27 @@
     <section class="this-station flex row">
     <label>
       <h3>当前站(中文):</h3>
-      <input type="text" placeholder="中文" v-model="sStation" @keyup="elementMyValue">
+      <input type="text" placeholder="中文站点" v-model="sStation" @keyup="getSStation">
     </label>
     <label>
       <h3>当前站(英文):</h3>
-      <input type="text" placeholder="英文" v-model="eStation" @keyup="elementMyValue">
+      <input type="text" placeholder="英文站点" v-model="eStation" @keyup="getEStation">
     </label>
     </section>
     <section class="next-station flex row">
           <label>
       <h3>下一站(中文):</h3>
-      <input type="text" placeholder="中文" v-model="sNext">
+      <input type="text" placeholder="中文下一站" v-model="sNext" @keyup="getSNext">
     </label>
     <label>
       <h3>下一站(英文):</h3>
-      <input type="text" placeholder="英文" v-model="eNext" @keyup="elementMyValue">
+      <input type="text" placeholder="英文下一站" v-model="eNext" @keyup="getENext">
     </label>
     </section>
     <section class="line-options flex row">
           <label>
       <h3>线路:</h3>
-      <select name="line" id="line-options" v-model="Line" @keyup="elementMyValue">
+      <select name="line" id="line-options" v-model="Line" @change="getLine">
         <option value="1">1 号线</option>
         <option value="2">2 号线</option>
         <option value="3">3 号线</option>
@@ -52,7 +52,7 @@
     </label>
     <label>
       <h3>站台:</h3>
-      <select name="platform" id="platform" v-model="platform" @select="elementMyValue">
+      <select name="platform" id="platform" v-model="platform" @change="getPlatform">
         <option value="1">1 站台</option>
         <option value="2" selected>2 站台</option>
         <option value="3">3 站台</option>
@@ -64,10 +64,9 @@
     </label>
     <label>
       <h3>站点编号:</h3>
-      <input type="text" v-model="nStation" @keyup="elementMyValue">
+      <input type="text" v-model="nStation" placeholder="站台编号" @keyup="getNStation">
     </label>
     </section>
-    <span>{{sStation}},{{eStation}},{{sNext}},{{eNext}},{{Line}},{{nStation}},{{platform}}</span>
   </div>
 </template>
 
@@ -77,29 +76,50 @@ export default {
   name: 'options',
   data(){
     return{
-      sStation: '大学城北',
-      eStation: 'Sino-Singapore Guangzhou Knowledge City',
-      sNext: '大学城南',
-      eNext: 'Higher Education Mega Center S.',
-      Line: '10',
-      nStation: '40',
-      platform: '4'
+      sStation: '',
+      eStation: '',
+      sNext: '',
+      eNext: '',
+      Line: '14',
+      nStation: '',
+      platform: '4',
+      color: 'line14'
     }
   },
   methods:{
-    elementMyValue: function(){
+    getSStation: function(){
       const getSStation = this.$data.sStation;
+      Bus.$emit('getSStation',getSStation);
+    },
+    getEStation: function(){
       const getEStation = this.$data.eStation;
-      const getSNext = this.$data.sNext;
-      const getENext = this.$data.eNext;
-      const getLine = this.$data.Line;
-      const getNStation = this.$data.nStation;
-      const getPlatform = this.$data.platform;
-      Bus.$emit('getSStation',getSStation,getEStation,getSNext,getENext,getLine,getNStation,getPlatform);
       Bus.$emit('getEStation',getEStation);
+    },
+    getSNext: function(){
+      const getSNext = this.$data.sNext;
       Bus.$emit('getSNext',getSNext);
+    },
+    getENext: function(){
+      const getENext = this.$data.eNext;
       Bus.$emit('getENext',getENext);
+    },
+    getLine: function(){
+      const getLine = this.$data.Line;
+      Bus.$emit('getLine',getLine);
+      const getColor = this.$data.color;
+      Bus.$emit('getColor',getColor);
+    },
+    getPlatform: function(){
+      const getPlatform = this.$data.platform;
+      Bus.$emit('getPlatform',getPlatform);
+    },
+    getNStation: function(){
+      const getNStation = this.$data.nStation;
       Bus.$emit('getNStation',getNStation);
+    },
+    getColor(){
+      const getColor = this.$data.color;
+      Bus.$emit('getColor',getColor);
     }
   },
   watch: {
@@ -121,6 +141,7 @@ export default {
     },
     'Line' : function(newVal) {
       this.Line = newVal;
+      this.color = 'line' + newVal;
       console.log(newVal);
     },
     'nStation' : function(newVal) {
@@ -129,6 +150,10 @@ export default {
     },
     'platform' : function(newVal) {
       this.platform = newVal;
+      console.log(newVal);
+    },
+    'color': function(newVal) {
+      this.color = newVal;
       console.log(newVal);
     }
   }
