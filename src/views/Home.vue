@@ -1,5 +1,5 @@
 <template>
-  <div id="home" class="line-4 flex row center line4">
+  <div id="home" class="flex row center" :class="[setColor]">
     <section class="left flex row flex-1">
       <article class="left-next sec-text flex column next-text">
         <h2>下站</h2>
@@ -22,13 +22,14 @@
         <span class="medic-left">{{ Line }}</span>
         <span class="medic-right">{{ nStation }}</span>
       </article>
-      <article class="right-station flex column center line4">
-        <h4>2</h4>
+      <article class="right-station flex column center" :class="[setColor]">
+        <h4>{{platform}}</h4>
         <h5>站台</h5>
         <h6>Platform</h6>
       </article>
     </section>
   </div>
+
 </template>
 
 <script>
@@ -39,43 +40,82 @@ export default {
   },
   data() {
     return{
-      sStation: '知识城',
+      sStation: '芝士橙',
       eStation: 'Sino-Singapore Guangzhou Knowledge City',
-      sNext: '大学城南',
-      eNext: 'Sino-Singapore Guangzhou Knowledge City',
-      Line: '10',
-      nStation: '40'
+      sNext: '枫下',
+      eNext: 'Fengxia',
+      Line: '14',
+      nStation: '40',
+      platform: '4',
+      color: 'line14'
     }
   },
   mounted(){
-    this.getData();
+    this.getSStation();
+    this.getEStation();
+    this.getSNext();
+    this.getENext();
+    this.getLine();
+    this.getNStation();
+    this.getPlatform();
+    console.log(this.$data.color)
   },
   methods: {
-    getData() {
+    getSStation() {
       const vm = this;
       Bus.$on('getSStation',getSStation => {
         vm.sStation = getSStation;
       });
+    },
+    getEStation() {
+      const vm = this;
       Bus.$on('getEStation',getEStation => {
         vm.eStation = getEStation;
       });
-      Bus.$on('getLine',getLine => {
-        vm.Line = getLine;
+    },
+    getSNext() {
+      const vm = this;
+      Bus.$on('getSNext',getSNext => {
+        vm.sNext = getSNext;
       });
+    },    
+    getENext() {
+      const vm = this;
       Bus.$on('getENext',getENext => {
         vm.eNext = getENext;
       });
+    },
+    getLine() {
+      const vm = this;
+      Bus.$on('getLine',getLine => {
+        vm.Line = getLine;
+      });
+    },
+    getNStation(){
+      const vm = this;
       Bus.$on('getNStation',getNStation => {
         vm.nStation = getNStation;
-      });
+      })
+    },
+    getPlatform(){
+      const vm = this;
+      Bus.$on('getPlatform',getPlatform => {
+        vm.platform = getPlatform;
+      })
+    }
+  },
+  computed:{
+    setColor: function(){
+      return this.$data.color = 'line' + this.$data.Line;
     }
   },
   watch:{
-    'sStation': function(){this.getData();},
-    'eStation': function(){this.getData();},
-    'sNext' : function(){this.getData();},
-    'eNext': function(){this.getData();},
-    'nStation': function(){this.getData();},
+    'sStation': function(){this.getSStation();},
+    'eStation': function(){this.getEStation();},
+    'sNext' : function(){this.getSNext();},
+    'eNext': function(){this.getENext();},
+    'Line': function(){this.getLine();},
+    'nStation': function(){this.getNStation();},
   }
 }
 </script>
