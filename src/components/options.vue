@@ -47,7 +47,7 @@
         <option value="21">21 号线</option>
         <option value="22">22 号线</option>
         <option value="GF">广佛线</option>
-        <option value="APM">APM线</option>
+        <option value="APM" disabled>APM线</option>
       </select>
     </label>
     <label>
@@ -120,41 +120,6 @@ export default {
     getColor(){
       const getColor = this.$data.color;
       Bus.$emit('getColor',getColor);
-    }
-  },
-  watch: {
-    'sStation' : function(newVal){
-      this.sStation = newVal;
-      console.log(newVal);
-    },
-    'eStation' : function(newVal) {
-      this.eStation = newVal;
-      console.log(newVal);
-    },
-    'sNext' : function(newVal) {
-      this.sNext = newVal;
-      console.log(newVal);
-    },
-    'eNext' : function(newVal) {
-      this.eNext = newVal;
-      console.log(newVal);
-    },
-    'Line' : function(newVal) {
-      this.Line = newVal;
-      this.color = 'line' + newVal;
-      console.log(newVal);
-    },
-    'nStation' : function(newVal) {
-      this.nStation = newVal;
-      console.log(newVal);
-    },
-    'platform' : function(newVal) {
-      this.platform = newVal;
-      console.log(newVal);
-    },
-    'color': function(newVal) {
-      this.color = newVal;
-      console.log(newVal);
     }
   }
 }
