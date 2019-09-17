@@ -1,5 +1,6 @@
 <template>
-  <div id="home" class="flex row center" :class="[setColor]">
+  <div>
+      <div id="home" class="flex row center" :class="[setColor]" ref="imageTofile">
     <section class="left flex row flex-1">
       <article class="left-next sec-text flex column next-text">
         <h2>下站</h2>
@@ -29,14 +30,18 @@
       </article>
     </section>
   </div>
+  <button @click="toImage()">生成签名图</button>
+  </div>
 
 </template>
 
 <script>
 import Bus from '../bus.js';
+import html2canvas from 'html2canvas';
 export default {
   name: 'home',
   components: {
+    html2canvas
   },
   data() {
     return{
@@ -47,7 +52,8 @@ export default {
       Line: '14',
       nStation: '40',
       platform: '4',
-      color: 'line14'
+      color: 'line14',
+      htmlUrl:''
     }
   },
   mounted(){
@@ -58,7 +64,6 @@ export default {
     this.getLine();
     this.getNStation();
     this.getPlatform();
-    console.log(this.$data.color)
   },
   methods: {
     getSStation() {
@@ -102,6 +107,30 @@ export default {
       Bus.$on('getPlatform',getPlatform => {
         vm.platform = getPlatform;
       })
+    },
+    expressImage: function(){
+      const image = this.$data.htmlUrl;
+      Bus.$emit('image',image);
+    },
+    toImage(){
+      html2canvas(this.$refs.imageTofile,{
+        backgroundColor: null
+      }).then((canvas) => {
+        let url = canvas.toDataURL('image/png');
+        this.htmlUrl = url;
+        console.log(this.$data.htmlUrl);
+        this.expressImage();
+      })
+    },
+    download(downloadUrl){
+      let aLink = document.createElement("a");
+      aLink.style.display = "none";
+      aLink.href = downloadUrl;
+      aLink.download = "sign.png";
+      // 触发点击-然后移除
+      document.body.appendChild(aLink);
+      aLink.click();
+      document.body.removeChild(aLink);
     }
   },
   computed:{
@@ -115,7 +144,7 @@ export default {
     'sNext' : function(){this.getSNext();},
     'eNext': function(){this.getENext();},
     'Line': function(){this.getLine();},
-    'nStation': function(){this.getNStation();},
+    'nStation': function(){this.getNStation();}
   }
 }
 </script>
@@ -153,6 +182,20 @@ export default {
       z-index: 4;
       border-radius: 64%;
       transform: translateX(-50%);
+    }
+  }
+  button{
+    position: absolute;
+    bottom: 44%;
+    left: 42%;
+    @media screen and (max-width: 775px){
+      &{
+        bottom: 38%;
+        left: 50%;
+        transform: translateX(-120%);
+        border: 1px solid #dedede;
+        background: transparent;
+      }
     }
   }
 </style>
