@@ -23,7 +23,7 @@ export default {
 
 <style lang="less">
 #app {
-  font-family:  sans-serif,'微软雅黑',Microsoft YaHei;
+  font-family:  '微软雅黑',Microsoft YaHei,sans-serif;
   -webkit-font-smoothing: antialiased;
   -moz-osx-font-smoothing: grayscale;
   text-align: center;
