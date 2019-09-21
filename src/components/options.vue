@@ -3,21 +3,21 @@
     <section class="this-station flex row">
     <label>
       <h3>当前站(中文):</h3>
-      <input type="text" placeholder="中文站点" v-model="sStation" @keyup="getSStation">
+      <input type="text" placeholder="中文站点" maxlength="6" v-model="sStation" @keyup="getSStation">
     </label>
     <label>
       <h3>当前站(英文):</h3>
-      <input type="text" placeholder="英文站点" v-model="eStation" @keyup="getEStation">
+      <input type="text" placeholder="英文站点" maxlength="40" v-model="eStation" @keyup="getEStation">
     </label>
     </section>
     <section class="next-station flex row">
           <label>
       <h3>下一站(中文):</h3>
-      <input type="text" placeholder="中文下一站" v-model="sNext" @keyup="getSNext">
+      <input type="text" placeholder="中文下一站" maxlength="6" v-model="sNext" @keyup="getSNext">
     </label>
     <label>
       <h3>下一站(英文):</h3>
-      <input type="text" placeholder="英文下一站" v-model="eNext" @keyup="getENext">
+      <input type="text" placeholder="英文下一站" maxlength="40" v-model="eNext" @keyup="getENext">
     </label>
     </section>
     <section class="line-options flex row">
@@ -31,7 +31,7 @@
         <option value="5">5 号线</option>
         <option value="6">6 号线</option>
         <option value="7">7 号线</option>
-        <option value="8" selected>8 号线</option>
+        <option value="8">8 号线</option>
         <option value="9">9 号线</option>
         <option value="10">10 号线</option>
         <option value="11">11 号线</option>
@@ -47,7 +47,7 @@
         <option value="21">21 号线</option>
         <option value="22">22 号线</option>
         <option value="GF">广佛线</option>
-        <option value="APM" disabled>APM线</option>
+        <option value="APM">APM线</option>
       </select>
     </label>
     <label>
@@ -64,7 +64,7 @@
     </label>
     <label>
       <h3>站点编号:</h3>
-      <input type="text" v-model="nStation" placeholder="站台编号" @keyup="getNStation">
+      <input type="number" min="-9" max="99" maxlength="2" v-model="nStation" placeholder="站台编号" @keyup="getNStation" @change="getNStation">
     </label>
     </section>
   </div>
@@ -114,13 +114,23 @@ export default {
       Bus.$emit('getPlatform',getPlatform);
     },
     getNStation: function(){
-      const getNStation = this.$data.nStation;
-      Bus.$emit('getNStation',getNStation);
+      let getNStation = this.$data.nStation;
+      if(getNStation === ''){
+        getNStation = 1;
+        Bus.$emit('getNStation',getNStation);
+      }else if(getNStation < 10 && getNStation > -1){
+        getNStation = `0${getNStation}`;
+        Bus.$emit('getNStation',getNStation);
+      }else{
+        Bus.$emit('getNStation',getNStation);
+      }
     },
     getColor(){
       const getColor = this.$data.color;
       Bus.$emit('getColor',getColor);
     }
+  },
+  watch:{
   }
 }
 </script>

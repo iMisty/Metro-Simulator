@@ -10,7 +10,8 @@
         <h2>{{ sNext }}</h2>
         <h3>{{ eNext }}</h3>
       </article>
-      <svg t="1567945304723" class="icon" viewBox="0 0 1024 1024" version="1.1" xmlns="http://www.w3.org/2000/svg" p-id="3199" width="32" height="32"><path d="M550.1 127.5c0 9-3.4 17.9-10.3 24.7L180.1 512l359.8 359.8c13.7 13.7 13.7 35.8 0 49.5-13.7 13.7-35.8 13.7-49.5 0L105.9 536.7c-13.7-13.7-13.7-35.8 0-49.5l384.5-384.5c13.7-13.7 35.8-13.7 49.5 0 6.8 6.9 10.2 15.8 10.2 24.8z" p-id="3200"></path><path d="M928.4 512c0 19.3-15.7 35-35 35H130.6c-19.3 0-35-15.7-35-35s15.7-35 35-35h762.7c19.4 0 35.1 15.7 35.1 35z" p-id="3201"></path></svg>
+      <svg t="1567945304723" class="icon" viewBox="0 0 1024 1024" version="1.1" xmlns="http://www.w3.org/2000/svg" p-id="3199" width="32" height="32">
+      <path d="M550.1 127.5c0 9-3.4 17.9-10.3 24.7L180.1 512l359.8 359.8c13.7 13.7 13.7 35.8 0 49.5-13.7 13.7-35.8 13.7-49.5 0L105.9 536.7c-13.7-13.7-13.7-35.8 0-49.5l384.5-384.5c13.7-13.7 35.8-13.7 49.5 0 6.8 6.9 10.2 15.8 10.2 24.8z" p-id="3200"></path><path d="M928.4 512c0 19.3-15.7 35-35 35H130.6c-19.3 0-35-15.7-35-35s15.7-35 35-35h762.7c19.4 0 35.1 15.7 35.1 35z" p-id="3201"></path></svg>
     </section>
     <section class="medium flex column flex-2">
       <article class="medium-text">
@@ -20,7 +21,7 @@
     </section>
     <section class="right flex row flex-1 center">
       <article class="right-medic">
-        <span class="medic-left">{{ Line }}</span>
+        <span class="medic-left" :class="{ apm: isAPM }">{{ Line }}</span>
         <span class="medic-right">{{ nStation }}</span>
       </article>
       <article class="right-station flex column center" :class="[setColor]">
@@ -53,7 +54,8 @@ export default {
       nStation: '40',
       platform: '4',
       color: 'line14',
-      htmlUrl:''
+      htmlUrl:'',
+      isAPM: false
     }
   },
   mounted(){
@@ -64,6 +66,7 @@ export default {
     this.getLine();
     this.getNStation();
     this.getPlatform();
+    this.getAPM();
   },
   methods: {
     getSStation() {
@@ -131,6 +134,12 @@ export default {
       document.body.appendChild(aLink);
       aLink.click();
       document.body.removeChild(aLink);
+    },
+    getAPM(){
+      let line = this.$data.line;
+      if(line === 'APM'){
+        this.$data.isAPM = true;
+      }
     }
   },
   computed:{
@@ -168,7 +177,7 @@ export default {
       bottom: 0;
       left: 0;
       width: 100%;
-      height: 1rem;      
+      height: 3rem;      
     }
     &::before{
       content: '';
@@ -180,7 +189,7 @@ export default {
       border: 1px solid #999;
       background: linear-gradient(90deg,#fff,84%,#888);
       z-index: 4;
-      border-radius: 64%;
+      border-radius: 32%;
       transform: translateX(-50%);
     }
   }
@@ -188,7 +197,7 @@ export default {
     position: absolute;
     bottom: 44%;
     left: 42%;
-    @media screen and (max-width: 775px){
+    @media screen and (max-width: 768px){
       &{
         bottom: 38%;
         left: 50%;
