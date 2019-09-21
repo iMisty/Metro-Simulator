@@ -64,7 +64,7 @@
     </label>
     <label>
       <h3>站点编号:</h3>
-      <input type="number" min="-9" max="99" maxlength="2" v-model="nStation" placeholder="站台编号" @keyup="getNStation" @change="getNStation">
+      <input type="number" min="-9" max="99" maxlength="2" v-model="nStation" placeholder="-4" @keyup="getNStation" @change="getNStation">
     </label>
     </section>
   </div>
