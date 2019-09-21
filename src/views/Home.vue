@@ -21,8 +21,8 @@
     </section>
     <section class="right flex row flex-1 center">
       <article class="right-medic">
-        <span class="medic-left" :class="{ apm: isAPM }">{{ Line }}</span>
-        <span class="medic-right">{{ nStation }}</span>
+        <span class="medic-left flex center" :class="[setColor]">{{ Line }}</span>
+        <span class="medic-right flex center" :class="[setColor]">{{ nStation }}</span>
       </article>
       <article class="right-station flex column center" :class="[setColor]">
         <h4>{{platform}}</h4>
@@ -116,8 +116,10 @@ export default {
       Bus.$emit('image',image);
     },
     toImage(){
+      let scale = window.devicePixelRatio;
       html2canvas(this.$refs.imageTofile,{
-        backgroundColor: null
+        backgroundColor: null,
+        scale: scale
       }).then((canvas) => {
         let url = canvas.toDataURL('image/png');
         this.htmlUrl = url;
