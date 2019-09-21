@@ -186,8 +186,8 @@ export default {
       left: 50%;
       width: 5rem;
       height: 2rem;
-      border: 1px solid #999;
-      background: linear-gradient(90deg,#fff,84%,#888);
+      border: 1px solid #d59850;
+      background:linear-gradient(90deg, #ec9b3b, #d2852b, #d59850);
       z-index: 4;
       border-radius: 32%;
       transform: translateX(-50%);
