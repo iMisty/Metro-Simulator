@@ -5,7 +5,7 @@ Vue.use(vuex);
 
 
 const guangzhou = {
-  store:{
+  state:{
     chThisStation: '芝士橙',
     enThisStation: 'Sino-Singapore Guangzhou Knowledge City',
     chNextStation: '枫下',
