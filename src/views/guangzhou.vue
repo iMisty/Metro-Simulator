@@ -37,12 +37,12 @@
 </template>
 
 <script>
-import Bus from '../bus.js';
 import html2canvas from 'html2canvas';
+import Bus from '../bus';
 export default {
   name: 'home',
   components: {
-    html2canvas
+    html2canvas,
   },
   data() {
     return{
@@ -54,11 +54,11 @@ export default {
       nStation: '40',
       platform: '4',
       color: 'line14',
-      htmlUrl:'',
-      isAPM: false
+      htmlUrl: '',
+      isAPM: false,
     }
   },
-  mounted(){
+  mounted() {
     this.getSStation();
     this.getEStation();
     this.getSNext();
@@ -71,51 +71,51 @@ export default {
   methods: {
     getSStation() {
       const vm = this;
-      Bus.$on('getSStation',getSStation => {
+      Bus.$on('getSStation', getSStation => {
         vm.sStation = getSStation;
       });
     },
     getEStation() {
       const vm = this;
-      Bus.$on('getEStation',getEStation => {
+      Bus.$on('getEStation', getEStation => {
         vm.eStation = getEStation;
       });
     },
     getSNext() {
       const vm = this;
-      Bus.$on('getSNext',getSNext => {
+      Bus.$on('getSNext', getSNext => {
         vm.sNext = getSNext;
       });
     },    
     getENext() {
       const vm = this;
-      Bus.$on('getENext',getENext => {
+      Bus.$on('getENext', getENext => {
         vm.eNext = getENext;
       });
     },
     getLine() {
       const vm = this;
-      Bus.$on('getLine',getLine => {
+      Bus.$on('getLine', getLine => {
         vm.Line = getLine;
       });
     },
-    getNStation(){
+    getNStation() {
       const vm = this;
       Bus.$on('getNStation',getNStation => {
         vm.nStation = getNStation;
-      })
+      });
     },
-    getPlatform(){
+    getPlatform() {
       const vm = this;
-      Bus.$on('getPlatform',getPlatform => {
+      Bus.$on('getPlatform', getPlatform => {
         vm.platform = getPlatform;
       })
     },
     expressImage: function(){
       const image = this.$data.htmlUrl;
-      Bus.$emit('image',image);
+      Bus.$emit('image', image);
     },
-    toImage(){
+    toImage() {
       let scale = window.devicePixelRatio;
       html2canvas(this.$refs.imageTofile,{
         backgroundColor: null,
@@ -123,21 +123,20 @@ export default {
       }).then((canvas) => {
         let url = canvas.toDataURL('image/png');
         this.htmlUrl = url;
-        console.log(this.$data.htmlUrl);
         this.expressImage();
       })
     },
-    download(downloadUrl){
-      let aLink = document.createElement("a");
-      aLink.style.display = "none";
+    download(downloadUrl) {
+      const aLink = document.createElement('a');
+      aLink.style.display = 'none';
       aLink.href = downloadUrl;
-      aLink.download = "sign.png";
+      aLink.download = 'sign.png';
       // 触发点击-然后移除
       document.body.appendChild(aLink);
       aLink.click();
       document.body.removeChild(aLink);
     },
-    getAPM(){
+    getAPM() {
       let line = this.$data.line;
       if(line === 'APM'){
         this.$data.isAPM = true;
@@ -150,14 +149,14 @@ export default {
     }
   },
   watch:{
-    'sStation': function(){this.getSStation();},
-    'eStation': function(){this.getEStation();},
-    'sNext' : function(){this.getSNext();},
-    'eNext': function(){this.getENext();},
-    'Line': function(){this.getLine();},
-    'nStation': function(){this.getNStation();}
-  }
-}
+    'sStation': function(){ this.getSStation(); },
+    'eStation': function(){ this.getEStation(); },
+    'sNext' : function(){ this.getSNext(); },
+    'eNext': function(){ this.getENext(); },
+    'Line': function(){ this.getLine(); },
+    'nStation': function(){ this.getNStation(); },
+  },
+};
 </script>
 
 <style lang="less" scoped>

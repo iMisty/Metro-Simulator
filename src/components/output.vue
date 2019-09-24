@@ -9,41 +9,40 @@
 import Bus from '../bus.js';
 import html2canvas from 'html2canvas';
 export default{
-  components:{
-    html2canvas
+  components: {
+    html2canvas,
   },
-  data(){
+  data() {
     return{
-      htmlUrl: ''
+      htmlUrl: '',
     }
   },
-  mounted(){
+  mounted() {
     this.getImage();
   },
-  methods:{
-    getImage(){
+  methods: {
+    getImage() {
       const vm = this;
-      Bus.$on('image',image => {
+      Bus.$on('image', image => {
         vm.htmlUrl = image;
       });
     },
-    download(htmlUrl){
-      let aLink = document.createElement("a");
-      aLink.style.display = "none";
+    download(htmlUrl) {
+      const aLink = document.createElement('a');
+      aLink.style.display = 'none';
       aLink.href = htmlUrl;
-      aLink.download = "sign.png";
+      aLink.download = 'sign.png';
       // 触发点击-然后移除
       document.body.appendChild(aLink);
       aLink.click();
       document.body.removeChild(aLink);
     },
-    image(){
+    image() {
       const vm = this;
-      console.log(this.$data.htmlUrl);
-      let img = this.$data.htmlUrl;
-      if(img === ''){
+      const img = this.$data.htmlUrl;
+      if (img === '') {
         alert('请先点击生成签名档再下载');
-      }else{
+      }else {
         this.download(vm.htmlUrl);
       }
     }

@@ -1,6 +1,6 @@
 <template>
   <div id="app">
-    <Home></Home>
+    <guangzhou></guangzhou>
     <Options></Options>
     <inst-canvas></inst-canvas>
     <article class="copyright">
@@ -11,12 +11,12 @@
 </template>
 
 <script>
-import Home from './views/Home';
+import guangzhou from './views/guangzhou';
 import Options from './components/options';
 import instCanvas from './components/output';
 export default {
   components: {
-    Home,Options,instCanvas
+    guangzhou,Options,instCanvas
   }
 }
 </script>
@@ -29,7 +29,7 @@ export default {
   text-align: center;
   color: #000;
   max-width: 800px;
-  margin: 8px auto;
+  margin: 0 auto;
   min-height: 100vh;
   .copyright{
     position: absolute;

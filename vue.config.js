@@ -1,7 +1,7 @@
 module.exports = {
-  baseUrl: '/',
+  baseUrl: './',
   outputDir: 'dist',
-  lintOnSave: true,
+  lintOnSave: false,
   runtimeCompiler: true, 
   chainWebpack: () => {},
   configureWebpack: () => {},

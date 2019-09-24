@@ -89,48 +89,48 @@ export default {
   methods:{
     getSStation: function(){
       const getSStation = this.$data.sStation;
-      Bus.$emit('getSStation',getSStation);
+      Bus.$emit('getSStation', getSStation);
     },
     getEStation: function(){
       const getEStation = this.$data.eStation;
-      Bus.$emit('getEStation',getEStation);
+      Bus.$emit('getEStation', getEStation);
     },
     getSNext: function(){
       const getSNext = this.$data.sNext;
-      Bus.$emit('getSNext',getSNext);
+      Bus.$emit('getSNext', getSNext);
     },
     getENext: function(){
       const getENext = this.$data.eNext;
-      Bus.$emit('getENext',getENext);
+      Bus.$emit('getENext', getENext);
     },
     getLine: function(){
       const getLine = this.$data.Line;
-      Bus.$emit('getLine',getLine);
+      Bus.$emit('getLine', getLine);
       const getColor = this.$data.color;
-      Bus.$emit('getColor',getColor);
+      Bus.$emit('getColor', getColor);
     },
     getPlatform: function(){
       const getPlatform = this.$data.platform;
-      Bus.$emit('getPlatform',getPlatform);
+      Bus.$emit('getPlatform', getPlatform);
     },
     getNStation: function(){
       let getNStation = this.$data.nStation;
       if(getNStation === ''){
         getNStation = 1;
-        Bus.$emit('getNStation',getNStation);
+        Bus.$emit('getNStation', getNStation);
       }else if(getNStation < 10 && getNStation > -1){
         getNStation = `0${getNStation}`;
-        Bus.$emit('getNStation',getNStation);
+        Bus.$emit('getNStation', getNStation);
       }else{
-        Bus.$emit('getNStation',getNStation);
+        Bus.$emit('getNStation', getNStation);
       }
     },
-    getColor(){
+    getColor() {
       const getColor = this.$data.color;
-      Bus.$emit('getColor',getColor);
-    }
+      Bus.$emit('getColor', getColor);
+    },
   },
-  watch:{
-  }
-}
+  watch: {
+  },
+};
 </script>
