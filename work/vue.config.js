@@ -1,5 +1,5 @@
 module.exports = {
-  baseUrl: './',
+  baseUrl: '/',
   outputDir: 'dist',
   lintOnSave: true,
   runtimeCompiler: true, 
