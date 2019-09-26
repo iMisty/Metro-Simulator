@@ -3,10 +3,6 @@
     <guangzhou></guangzhou>
     <Options></Options>
     <inst-canvas></inst-canvas>
-    <article class="copyright">
-      <h3>2019 Wednesday Teatime.Made by Koeri</h3>
-      <a href="https://github.com/iMisty/GM-Simulator">开源于GitHub</a>
-    </article>
   </div>
 </template>
 
