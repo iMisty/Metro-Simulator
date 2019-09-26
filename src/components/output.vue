@@ -1,11 +1,13 @@
 <template>
 <div class="output flex column align-center">
-  <button @click="image()">下载签名图</button>
+  <button @click="createImage()">生成签名图</button>
+  <button @click="downloadImage()">下载签名图</button>
   <img class="real_pic" :src="htmlUrl" v-if="htmlUrl!= ''"/>
 </div>
 </template>
 
-<script>
+<script lang="ts">
+/*
 import Bus from '../bus.js';
 import html2canvas from 'html2canvas';
 export default{
@@ -26,6 +28,27 @@ export default{
       Bus.$on('image', image => {
         vm.htmlUrl = image;
       });
+    },
+    private toImage() {
+      let scale = window.devicePixelRatio;
+      html2canvas({
+        backgroundColor: null,
+        scale: scale
+      }).then((canvas:string) => {
+        let url = canvas.toDataURL<string>('image/png');
+        this.htmlUrl = url;
+        this.expressImage();
+      })
+    }
+    public download(downloadUrl:string) {
+      const aLink = document.createElement('a');
+      aLink.style.display = 'none';
+      aLink.href = downloadUrl;
+      aLink.download = 'sign.png';
+      // 触发点击-然后移除
+      document.body.appendChild(aLink);
+      aLink.click();
+      document.body.removeChild(aLink);
     },
     download(htmlUrl) {
       const aLink = document.createElement('a');
@@ -48,6 +71,7 @@ export default{
     }
   }
 }
+*/
 </script>
 <style lang="less" scoped>
 .real_pic{
