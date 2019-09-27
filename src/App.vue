@@ -1,18 +1,14 @@
 <template>
   <div id="app">
-    <guangzhou></guangzhou>
-    <Options></Options>
-    <inst-canvas></inst-canvas>
+    <Guangzhou></Guangzhou>
   </div>
 </template>
 
 <script>
-import guangzhou from './views/guangzhou';
-import Options from './components/options';
-import instCanvas from './components/output';
+import Guangzhou from './views/Guangzhou';
 export default {
   components: {
-    guangzhou,Options,instCanvas
+    Guangzhou
   }
 }
 </script>
@@ -24,14 +20,5 @@ export default {
   -moz-osx-font-smoothing: grayscale;
   text-align: center;
   color: #000;
-  max-width: 800px;
-  margin: 0 auto;
-  min-height: 100vh;
-  .copyright{
-    position: absolute;
-    bottom: 8px;
-    left: 50%;
-    transform: translateX(-50%);
-  }
 }
 </style>

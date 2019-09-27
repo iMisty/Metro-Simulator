@@ -1,6 +1,6 @@
 <template>
   <div>
-    <div id="home" class="flex row center" :class="[setColor]" ref="imageTofile">
+    <div id="home" class="flex row center" :class="[getColor]">
       <section class="left flex row flex-1">
         <article class="left-next sec-text flex column next-text">
           <h2>下站</h2>
@@ -48,8 +48,9 @@
         </article>
       </section>
     </div>
-    <button @click="toImage()">生成签名图</button>
-  </div>
+    <options></options>
+    <buttons></buttons>
+    </div>
 </template>
 
 <style lang="less" scoped>
@@ -92,11 +93,12 @@
 <script lang="ts">
 import { Component, Prop, Vue, Watch } from 'vue-property-decorator';
 import  html2canvas  from 'html2canvas';
-import Bus from '../bus';
+import options from '@/components/options.vue';
+import buttons from '@/components/output.vue';
 
 @Component({
   components:{
-    
+    options,buttons
   }
 })
 
@@ -114,62 +116,9 @@ export default class guangzhou extends Vue {
   private isAPM:boolean =  false;
   // mounted
   mounted() {
-    this.getSStation();
-    this.getEStation();
-    this.getSNext();
-    this.getENext();
-    this.getLine();
-    this.getNStation();
-    this.getPlatform();
     this.getAPM();
   }
   // methods
-    private getSStation() {
-      const vm = this;
-      Bus.$on('getSStation', (getSStation:string) => {
-        vm.sStation = getSStation;
-      });
-    }
-    private getEStation() {
-      const vm = this;
-      Bus.$on('getEStation', (getEStation:string) => {
-        vm.eStation = getEStation;
-      });
-    }
-    private getSNext() {
-      const vm = this;
-      Bus.$on('getSNext', (getSNext:string) => {
-        vm.sNext = getSNext;
-      });
-    } 
-    private getENext() {
-      const vm = this;
-      Bus.$on('getENext', (getENext:string) => {
-        vm.eNext = getENext;
-      });
-    }
-    private getLine() {
-      const vm = this;
-      Bus.$on('getLine', (getLine:string) => {
-        vm.Line = getLine;
-      });
-    }
-    private getNStation() {
-      const vm = this;
-      Bus.$on('getNStation',(getNStation:string) => {
-        vm.nStation = getNStation;
-      });
-    }
-    private getPlatform() {
-      const vm = this;
-      Bus.$on('getPlatform', (getPlatform:string) => {
-        vm.platform = getPlatform;
-      })
-    }
-    private expressImage(){
-      const image = this.$data.htmlUrl;
-      Bus.$emit('image', image);
-    }
     private getAPM() {
       let line = this.$data.line;
       if(line === 'APM'){

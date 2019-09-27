@@ -1,13 +1,16 @@
 <template>
 <div class="output flex column align-center">
-  <button @click="createImage()">生成签名图</button>
-  <button @click="downloadImage()">下载签名图</button>
+    <div>生成签名图</div>
+  <div>下载签名图</div>
   <img class="real_pic" :src="htmlUrl" v-if="htmlUrl!= ''"/>
 </div>
 </template>
 
 <script lang="ts">
-/*
+import { Component, Prop, Vue, Watch } from 'vue-property-decorator';
+export default class output extends Vue {
+  private htmlUrl:string = '';
+}/*
 import Bus from '../bus.js';
 import html2canvas from 'html2canvas';
 export default{

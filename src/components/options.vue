@@ -67,6 +67,14 @@
       <input type="number" min="-9" max="99" maxlength="2" v-model="nStation" placeholder="-4" @keyup="getNStation" @change="getNStation">
     </label>
     </section>
+    <label>
+      <input type="checkbox" name="isFinished">
+      <h3>是否为终点站</h3>
+    </label>
+    <label>
+      <input type="checkbox" name="isExpress">
+      <h3>是否为快车站</h3>
+    </label>
   </div>
 </template>
 
