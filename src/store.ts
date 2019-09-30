@@ -1,11 +1,10 @@
 import Vue from 'vue';
-import vuex from 'vuex';
+import Vuex from 'vuex';
 
-Vue.use(vuex);
+Vue.use(Vuex);
 
-
-const guangzhou = {
-  state:{
+export default new Vuex.Store({
+  state: {
     chThisStation: '芝士橙',
     enThisStation: 'Sino-Singapore Guangzhou Knowledge City',
     chNextStation: '枫下',
@@ -14,25 +13,13 @@ const guangzhou = {
     nowStation: '40',
     platform: '4',
     color: 'line14',
-    htmlUrl:'',
-    isAPM: false
+    htmlUrl: '',
+    isAPM: false,
   },
-  mutations: { 
+  mutations: {
 
   },
-  actions: { 
+  actions: {
 
-   },
-  getters: { 
-
-  }
-}
-
-const store = new.Vuex.store({
-  modules:{
-    gz: guangzhou
-  }
+  },
 });
-
-
-export default store;
