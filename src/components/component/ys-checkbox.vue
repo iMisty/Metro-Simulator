@@ -1,7 +1,7 @@
 <template>
   <label class="ys-switch flex row">
     <input type="checkbox" name class="ys-switch-checkbox" />
-    <h3 class="ys-switch-text">{{inputName}}</h3>
+    <h3 class="ys-switch-text">{{title}}</h3>
   </label>
 </template>
 
@@ -11,7 +11,13 @@ import { Component, Prop, Vue, Watch } from "vue-property-decorator";
   components: {}
 })
 export default class ysCheckbox extends Vue {
-  private inputName:string = '检测是否为快车站';
+  @Prop({
+    type: String,
+    required: true,
+    default: 'Default Value'
+  })
+  title !: string;
+  
 }
 </script>
 <style lang="less" scoped>

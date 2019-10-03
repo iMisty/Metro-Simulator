@@ -1,6 +1,6 @@
 <template>
-<label>
-      <h3 class="ys-select-title">线路:</h3>
+<label class="ys-select-wrap">
+      <h3 class="ys-select-title">{{title}}</h3>
       <select class="ys-select" name="line" id="line-options" v-model="Line" @change="getLine">
         <option value="1" selected>1 号线</option>
         <option value="2">2 号线</option>
@@ -36,6 +36,12 @@ import { Component, Prop, Vue, Watch } from "vue-property-decorator";
   components: {}
 })
 export default class ysSelect extends Vue {
+  @Prop({
+    type: String,
+    required: true,
+    default: 'Default Value'
+  })
+  title !: string;
   private Line:string = '';
 
   private getLine(){
@@ -44,15 +50,22 @@ export default class ysSelect extends Vue {
 }
 </script>
 <style lang="less" scoped>
+.ys-select-wrap{
+  margin: 8px;
+  flex: 1 1 100%;
+}
 .ys-select-title{
   text-align: left;
   font-size: 2rem;
+  font-weight: 400;
+  color: rgba(0,0,0,.54)
 }
 .ys-select{
   position: relative;
     -webkit-appearance: none;
     -moz-appearance: none;
     padding-right: 2.4rem;
+    width: 100%;
     height: 3.6rem;
     font-size: 16px;
     border: none;

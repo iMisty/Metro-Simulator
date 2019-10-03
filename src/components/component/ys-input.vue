@@ -39,6 +39,9 @@ export default class ysInput extends Vue {
 <style lang="less" scoped>
 .ys-input-wrap{
   position: relative;
+  flex: 1 1 40%;
+  height: 48px;
+  margin: 8px;
 }
 .ys-input-text {
   position: absolute;
@@ -46,15 +49,20 @@ export default class ysInput extends Vue {
   left: 0;
   width: 100%;
   text-align: left;
-  z-index: -1;
+  font-size: 2rem;
+  z-index: 1;
   color: rgba(0, 0, 0, 0.54);
   font-weight: 400;
-  transition-duration: .4s;
+  transition-duration: .2s;
+  transform-origin: left;
 }
 .ys-input-area {
   position: relative;
   border: none;
   outline: none;
+  width: 100%;
+  height: 36px;
+  z-index: 4;
   font-size: 16px;
   border-bottom: 1px solid rgba(0, 0, 0, 0.42);
   color: rgba(0, 0, 0, 0.54);
@@ -64,9 +72,10 @@ export default class ysInput extends Vue {
 .ys-input-selected {
   .ys-input-text {
     top: -16px;
-    left: -16px;
-    transform: scale(.8);
-    transition-duration: .4s;
+    left: 0;
+    transform: scale(.8) translateY(0);
+    transition-duration: .2s;
+    transform-origin: left;
   }
 }
 </style>
