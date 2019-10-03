@@ -48,8 +48,6 @@
         </article>
       </section>
     </div>
-    <options></options>
-    <buttons></buttons>
     </div>
 </template>
 
@@ -60,7 +58,7 @@
   flex-direction: row;
   justify-content: space-between;
   align-items: center;
-  margin: 0 auto;
+  margin: 8px auto;
   padding: 0 2rem;
   width: 700px;
   height: 168px;
