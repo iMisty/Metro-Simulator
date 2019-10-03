@@ -1,19 +1,20 @@
 <template>
   <div id="app">
-    <Guangzhou style="display: none;"></Guangzhou>
-    <ys-input :inputTitle="title"></ys-input>
+    <Guangzhou></Guangzhou>
+    <optionss class="options"></optionss>
   </div>
 </template>
 
 <script lang="ts">
 import {Component, Prop, Vue} from "vue-property-decorator";
-import Guangzhou from './views/Guangzhou.vue';
-import ysInput from '@/components/component/ys-input.vue';
-
+import Guangzhou from '@/views/Guangzhou.vue';
+import options from '@/components/options.vue';
+import option from '@/components/option.vue';
 @Component({
   components:{
     Guangzhou,
-    ysInput
+    options,
+    'optionss':option
   }
 }
 )
@@ -30,9 +31,13 @@ export default class App extends Vue {
   text-align: center;
   color: #000;
   display: flex;
+  flex-direction: column;
   justify-content: center;
   align-items: center;
-  width: 100vw;
-  height: 100vh;
+  flex-wrap: wrap;
+  .options{
+    width: 800px;
+    padding: 32px;
+  }
 }
 </style>
