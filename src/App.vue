@@ -1,5 +1,6 @@
 <template>
   <div id="app">
+    <ys-header></ys-header>
     <Guangzhou></Guangzhou>
     <optionss class="options"></optionss>
   </div>
@@ -7,11 +8,13 @@
 
 <script lang="ts">
 import {Component, Prop, Vue} from "vue-property-decorator";
-import Guangzhou from '@/views/Guangzhou.vue';
+import ysHeader from '@/components/ys-header.vue';
+import Guangzhou from '@/views/Guangzhou-APM.vue';
 import options from '@/components/options.vue';
 import option from '@/components/option.vue';
 @Component({
   components:{
+    ysHeader,
     Guangzhou,
     options,
     'optionss':option
