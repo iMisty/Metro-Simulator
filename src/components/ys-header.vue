@@ -19,10 +19,9 @@
 <script lang="ts">
 import { Component, Prop, Vue, Watch } from "vue-property-decorator";
 import ysSidebar from "@/components/ys-sidebar.vue";
-import ysMask from '@/components/ys-mask.vue';
 @Component({
   components: {
-    ysSidebar,ysMask
+    ysSidebar
   }
 })
 export default class ysHeader extends Vue {
