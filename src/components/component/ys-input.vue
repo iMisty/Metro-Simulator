@@ -1,7 +1,7 @@
 <template>
   <label class="ys-input-wrap" :class="{'ys-input-selected':inputSelected}">
     <input class="ys-input-area" type="text" maxlength="6" @focus="click()" @blur="blur()" v-model="inputText"/>
-    <h3 class="ys-input-text">{{inputTitle}}</h3>
+    <h3 class="ys-input-text">{{title}}</h3>
   </label>
 </template>
 
@@ -19,7 +19,7 @@ export default class ysInput extends Vue {
     required: true,
     default: 'Default Value'
   })
-  inputTitle !: string;
+  title !: string;
 
   //@Emit('inputTitle')send(inputTitle:string){};
 
