@@ -4,11 +4,11 @@
     <input
       class="ys-number-area"
       type="number"
-      min="-9"
-      max="99"
+      :min="min"
+      :max="max"
       maxlength="2"
       v-model="inputNumber"
-      placeholder="-4"
+      :placeholder="defaultPlaceholder"
     />
   </label>
 </template>
@@ -25,7 +25,13 @@ export default class ysNumber extends Vue {
     required: true,
     default: "Default Value"
   })
-  title!: string;
+  title!: String;
+  @Prop(Number)
+  min!: Number;
+  @Prop(Number)
+  max!: Number;
+  @Prop(String)
+  defaultPlaceholder!: String;
 }
 </script>
 <style lang="less" scoped>
