@@ -1,6 +1,6 @@
 <template>
   <div id="app">
-    <ys-header></ys-header>
+    <ys-header :title="headerTitle" @mouseover.native="changeTitle()" @mouseout.native="restoreTitle()"></ys-header>
     <Guangzhou></Guangzhou>
     <optionss class="options"></optionss>
   </div>
@@ -22,7 +22,16 @@ import option from '@/components/option.vue';
 }
 )
 export default class App extends Vue {
+  private headerTitle:String = '昆特牌 提琴 烤蛋挞 苏打 马拉松';
   private title:string = 'test';
+
+  // 娱乐用
+  private changeTitle(){
+    return this.headerTitle = '㱎䖘䵈 䶁䘔 䶑䘓鋱 䩳䵷 㒪䪉䉥';
+  }
+  private restoreTitle(){
+    return this.headerTitle = '昆特牌 提琴 烤蛋挞 苏打 马拉松';
+  }
 }
 </script>
 
