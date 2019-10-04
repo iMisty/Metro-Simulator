@@ -62,12 +62,16 @@ export default class ysHeader extends Vue {
 }
 div.menu-icon {
   position: relative;
-  width: 40px;
-  height: 40px;
+  width: 48px;
+  height: 48px;
+  border-radius: 64%;
+  &:hover{
+      background-color: rgba(254,254,254,.18);
+    }
   .menu {
     position: absolute;
-    left: 4px;
-    width: 32px;
+    left: 12px;
+    width: 24px;
     height: 2px;
     z-index: 12;
     font-style: normal;
@@ -75,33 +79,33 @@ div.menu-icon {
     border-radius: 2rem;
   }
   .menu-top {
-    top: 10px;
-    transition: all ease 0.4s;
+    top: 14px;
+    transition: all ease-in-out 0.4s;
   }
   .menu-medium {
-    top: 18px;
+    top: 22px;
     transform: scale(1);
     transform-origin: center;
-    transition: all ease 0.4s;
+    transition: all ease-in-out 0.4s;
   }
   .menu-bottom {
-    top: 26px;
-    transition: all ease 0.4s;
+    top: 30px;
+    transition: all ease-in-out 0.4s;
   }
   .menu-top-selected {
-    top: 20px;
+    top: 24px;
     transform: rotate(45deg);
-    transition: all ease 0.4s;
+    transition: all ease-in-out 0.4s;
   }
   .menu-medium-selected {
     transform: scale(0);
     transform-origin: center;
-    transition: all ease 0.4s;
+    transition: all ease-in-out 0.4s;
   }
   .menu-bottom-selected {
-    top: 20px;
+    top: 24px;
     transform: rotate(-45deg);
-    transition: all ease 0.4s;
+    transition: all ease-in-out 0.4s;
   }
 }
 .header-title{

@@ -1,15 +1,16 @@
 <template>
   <div class="options">
     <section class="options-name flex row">
-      <ys-input :inputTitle="chNowStation"></ys-input>
-      <ys-input :inputTitle="enNowStation"></ys-input>
-      <ys-input :inputTitle="chNextStation"></ys-input>
-      <ys-input :inputTitle="enNextStation"></ys-input>
+      <ys-input :title="chNowStation"></ys-input>
+      <ys-input :title="enNowStation"></ys-input>
+      <ys-input :title="chNextStation"></ys-input>
+      <ys-input :title="enNextStation"></ys-input>
     </section>
     <section class="options-station-select flex row">
       <ys-select :title="line"></ys-select>
       <ys-select :title="platform"></ys-select>
-      <ys-number :title="StationNumTitle"></ys-number>
+      <ys-number :title="StationNumTitle" :min="-9" :max="99"></ys-number>
+      <ys-number :title="BarrierTitle" :min="1" :max="99"></ys-number>
     </section>
     <section class="options-station-check flex row">
       <ys-checkbox class="center" :title="isEnd"></ys-checkbox>
@@ -37,6 +38,7 @@ export default class option extends Vue{
   private line:string = '线路编号';
   private platform:string = '站台编号';
   private StationNumTitle:string = '站点编号';
+  private BarrierTitle:string = '屏蔽门编号';
   private isEnd:string = '是否为终点站';
   private isExpress:string = '是否为快车';
 }
