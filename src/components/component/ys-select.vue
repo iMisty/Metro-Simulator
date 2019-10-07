@@ -33,7 +33,7 @@
 <script lang="ts">
 import { Component, Prop, Vue, Watch } from "vue-property-decorator";
 @Component({
-  components: {}
+  components: { }
 })
 
 export default class ysSelect extends Vue {
