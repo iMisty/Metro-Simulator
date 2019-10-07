@@ -2,7 +2,7 @@
   <div id="app">
     <ys-header :title="headerTitle" @mouseover.native="changeTitle()" @mouseout.native="restoreTitle()"></ys-header>
     <Guangzhou></Guangzhou>
-    <optionss class="options"></optionss>
+    <options class="options"></options>
   </div>
 </template>
 
@@ -11,13 +11,11 @@ import {Component, Prop, Vue} from "vue-property-decorator";
 import ysHeader from '@/components/ys-header.vue';
 import Guangzhou from '@/views/Guangzhou-APM.vue';
 import options from '@/components/options.vue';
-import option from '@/components/option.vue';
 @Component({
   components:{
     ysHeader,
     Guangzhou,
-    options,
-    'optionss':option
+    options
   }
 }
 )

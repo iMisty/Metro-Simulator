@@ -1,158 +1,67 @@
 <template>
-  <div id="options" class="flex column tWrap">
-    <section class="this-station flex row">
-      <label>
-        <h3>当前站(中文):</h3>
-        <input type="text" placeholder="中文站点" maxlength="6" v-model="sStation" @keyup="getSStation" />
-      </label>
-      <label>
-        <h3>当前站(英文):</h3>
-        <input
-          type="text"
-          placeholder="英文站点"
-          maxlength="40"
-          v-model="eStation"
-          @keyup="getEStation"
-        />
-      </label>
+  <div class="options">
+    <section class="options-name flex row">
+      <ys-input :title="chNowStation"></ys-input>
+      <ys-input :title="enNowStation"></ys-input>
+      <ys-input :title="chNextStation"></ys-input>
+      <ys-input :title="enNextStation"></ys-input>
     </section>
-    <section class="next-station flex row">
-      <label>
-        <h3>下一站(中文):</h3>
-        <input type="text" placeholder="中文下一站" maxlength="6" v-model="sNext" @keyup="getSNext" />
-      </label>
-      <label>
-        <h3>下一站(英文):</h3>
-        <input type="text" placeholder="英文下一站" maxlength="40" v-model="eNext" @keyup="getENext" />
-      </label>
+    <section class="options-station-select flex row">
+      <ys-select :title="line"></ys-select>
+      <ys-select :title="platform" :items="listData"></ys-select>
+      <ys-number :title="StationNumTitle" :min="-9" :max="99"></ys-number>
+      <ys-number :title="BarrierTitle" :min="1" :max="99"></ys-number>
     </section>
-    <section class="line-options flex row">
-      <label>
-        <h3>线路:</h3>
-        <select name="line" id="line-options" v-model="Line" @change="getLine">
-          <option value="1">1 号线</option>
-          <option value="2">2 号线</option>
-          <option value="3">3 号线</option>
-          <option value="4">4 号线</option>
-          <option value="5">5 号线</option>
-          <option value="6">6 号线</option>
-          <option value="7">7 号线</option>
-          <option value="8">8 号线</option>
-          <option value="9">9 号线</option>
-          <option value="10">10 号线</option>
-          <option value="11">11 号线</option>
-          <option value="12">12 号线</option>
-          <option value="13">13 号线</option>
-          <option value="14">14 号线</option>
-          <option value="15">15 号线</option>
-          <option value="16">16 号线</option>
-          <option value="17">17 号线</option>
-          <option value="18">18 号线</option>
-          <option value="19">19 号线</option>
-          <option value="20">20 号线</option>
-          <option value="21">21 号线</option>
-          <option value="22">22 号线</option>
-          <option value="GF">广佛线</option>
-          <option value="APM">APM线</option>
-        </select>
-      </label>
-      <label>
-        <h3>站台:</h3>
-        <select name="platform" id="platform" v-model="platform" @change="getPlatform">
-          <option value="1">1 站台</option>
-          <option value="2" selected>2 站台</option>
-          <option value="3">3 站台</option>
-          <option value="4">4 站台</option>
-          <option value="5">5 站台</option>
-          <option value="6">6 站台</option>
-          <option value="7">7 站台</option>
-        </select>
-      </label>
-      <label>
-        <h3>站点编号:</h3>
-        <input
-          type="number"
-          min="-9"
-          max="99"
-          maxlength="2"
-          v-model="nStation"
-          placeholder="-4"
-          @keyup="getNStation"
-          @change="getNStation"
-        />
-      </label>
+    <section class="options-station-check flex row">
+      <ys-checkbox class="center" :title="isEnd"></ys-checkbox>
+      <ys-checkbox class="center" :title="isExpress"></ys-checkbox>
     </section>
-    <label>
-      <input type="checkbox" name="isFinished" />
-      <h3>是否为终点站</h3>
-    </label>
-    <label>
-      <input type="checkbox" name="isExpress" />
-      <h3>是否为快车站</h3>
-    </label>
+    <section class="option-station-button flex row center">
+      <ys-button :title="createImg"></ys-button>
+      <ys-button :title="downloadImg"></ys-button>
+    </section>
   </div>
 </template>
 
-<script>
-import Bus from "../bus.js";
-export default {
-  name: "options",
-  data() {
-    return {
-      sStation: "",
-      eStation: "",
-      sNext: "",
-      eNext: "",
-      Line: "14",
-      nStation: "",
-      platform: "4",
-      color: "line14"
-    };
-  },
-  methods: {
-    getSStation: function() {
-      const getSStation = this.$data.sStation;
-      Bus.$emit("getSStation", getSStation);
-    },
-    getEStation: function() {
-      const getEStation = this.$data.eStation;
-      Bus.$emit("getEStation", getEStation);
-    },
-    getSNext: function() {
-      const getSNext = this.$data.sNext;
-      Bus.$emit("getSNext", getSNext);
-    },
-    getENext: function() {
-      const getENext = this.$data.eNext;
-      Bus.$emit("getENext", getENext);
-    },
-    getLine: function() {
-      const getLine = this.$data.Line;
-      Bus.$emit("getLine", getLine);
-      const getColor = this.$data.color;
-      Bus.$emit("getColor", getColor);
-    },
-    getPlatform: function() {
-      const getPlatform = this.$data.platform;
-      Bus.$emit("getPlatform", getPlatform);
-    },
-    getNStation: function() {
-      let getNStation = this.$data.nStation;
-      if (getNStation === "") {
-        getNStation = 1;
-        Bus.$emit("getNStation", getNStation);
-      } else if (getNStation < 10 && getNStation > -1) {
-        getNStation = `0${getNStation}`;
-        Bus.$emit("getNStation", getNStation);
-      } else {
-        Bus.$emit("getNStation", getNStation);
-      }
-    },
-    getColor() {
-      const getColor = this.$data.color;
-      Bus.$emit("getColor", getColor);
-    }
-  },
-  watch: {}
-};
+<script lang="ts">
+import { Component, Prop, Vue, Watch } from 'vue-property-decorator';
+import ysInput from '@/components/component/ys-input.vue';
+import ysSelect from '@/components/component/ys-select.vue';
+import ysCheckbox from '@/components/component/ys-checkbox.vue';
+import ysNumber from '@/components/component/ys-number.vue';
+import ysButton from '@/components/component/ys-button.vue';
+@Component({
+components:{
+  ysInput,ysSelect,ysCheckbox,ysNumber,ysButton
+}
+})
+export default class option extends Vue{
+  private chNowStation:string = '当前站(中文)';
+  private enNowStation:string = '当前站(英文)';
+  private chNextStation:string = '下一站(中文)';
+  private enNextStation:string = '下一站(英文)';
+  private line:string = '线路编号';
+  private platform:string = '站台编号';
+  private StationNumTitle:string = '站点编号';
+  private BarrierTitle:string = '屏蔽门编号';
+  private isEnd:string = '是否为终点站';
+  private isExpress:string = '是否为快车';
+  private createImg:string = '生成图片';
+  private downloadImg:string = '下载图片';
+  
+  private listData:Object[] = ['1号线','2号线','3号线','4号线','5号线','6号线','7号线','8号线','9号线','10号线','11号线','12号线','13号线','14号线','15号线','16号线','17号线','18号线','19号线','20号线','21号线','22号线','23号线','广佛线','APM线',];
+}
 </script>
+<style lang="less" scoped>
+.options-name{
+  justify-content: space-between;
+  flex-wrap: wrap;
+  margin-top: 32px;
+}
+.options-station-select{
+  justify-content: space-between;
+}
+.options-station-check{
+  padding: 16px 0;
+}
+</style>
