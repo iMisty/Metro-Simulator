@@ -16,6 +16,10 @@
       <ys-checkbox class="center" :title="isEnd"></ys-checkbox>
       <ys-checkbox class="center" :title="isExpress"></ys-checkbox>
     </section>
+    <section class="option-station-button flex row center">
+      <ys-button :title="createImg"></ys-button>
+      <ys-button :title="downloadImg"></ys-button>
+    </section>
   </div>
 </template>
 
@@ -25,9 +29,10 @@ import ysInput from '@/components/component/ys-input.vue';
 import ysSelect from '@/components/component/ys-select.vue';
 import ysCheckbox from '@/components/component/ys-checkbox.vue';
 import ysNumber from '@/components/component/ys-number.vue';
+import ysButton from '@/components/component/ys-button.vue';
 @Component({
 components:{
-  ysInput,ysSelect,ysCheckbox,ysNumber
+  ysInput,ysSelect,ysCheckbox,ysNumber,ysButton
 }
 })
 export default class option extends Vue{
@@ -41,6 +46,8 @@ export default class option extends Vue{
   private BarrierTitle:string = '屏蔽门编号';
   private isEnd:string = '是否为终点站';
   private isExpress:string = '是否为快车';
+  private createImg:string = '生成图片';
+  private downloadImg:string = '下载图片';
 }
 </script>
 <style lang="less" scoped>
