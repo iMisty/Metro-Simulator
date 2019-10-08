@@ -91,12 +91,12 @@
 <script lang="ts">
 import { Component, Prop, Vue, Watch } from 'vue-property-decorator';
 import  html2canvas  from 'html2canvas';
-import options from '@/components/options.vue';
+import dashBoard from '@/components/dashboard.vue';
 import buttons from '@/components/output.vue';
 
 @Component({
   components:{
-    options,buttons
+    dashBoard,buttons
   }
 })
 

@@ -2,30 +2,9 @@
 <label class="ys-select-wrap">
       <h3 class="ys-select-title">{{title}}</h3>
         <select class="ys-select" name="line">
-          <option value="1">1 号线</option>
-          <option value="2">2 号线</option>
-          <option value="3">3 号线</option>
-          <option value="4">4 号线</option>
-          <option value="5">5 号线</option>
-          <option value="6">6 号线</option>
-          <option value="7">7 号线</option>
-          <option value="8">8 号线</option>
-          <option value="9">9 号线</option>
-          <option value="10">10 号线</option>
-          <option value="11">11 号线</option>
-          <option value="12">12 号线</option>
-          <option value="13">13 号线</option>
-          <option value="14">14 号线</option>
-          <option value="15">15 号线</option>
-          <option value="16">16 号线</option>
-          <option value="17">17 号线</option>
-          <option value="18">18 号线</option>
-          <option value="19">19 号线</option>
-          <option value="20">20 号线</option>
-          <option value="21">21 号线</option>
-          <option value="22">22 号线</option>
-          <option value="GF">广佛线</option>
-          <option value="APM">APM线</option>
+          <option v-for="list in items" :value="list.value">
+          {{list.data}}
+          </option>
         </select>
     </label>
 </template>
@@ -43,7 +22,6 @@ export default class ysSelect extends Vue {
     default: 'Default Value'
   })title !: string;
   @Prop()items !: Array<String>;
-  @Prop() isClicked !:boolean;
 }
 </script>
 <style lang="less" scoped>

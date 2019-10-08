@@ -2,7 +2,7 @@
   <div id="app">
     <ys-header :title="headerTitle" @mouseover.native="changeTitle()" @mouseout.native="restoreTitle()"></ys-header>
     <Guangzhou></Guangzhou>
-    <options class="options"></options>
+    <dash-board></dash-board>
   </div>
 </template>
 
@@ -10,12 +10,12 @@
 import {Component, Prop, Vue} from "vue-property-decorator";
 import ysHeader from '@/components/ys-header.vue';
 import Guangzhou from '@/views/Guangzhou-APM.vue';
-import options from '@/components/options.vue';
+import dashBoard from '@/components/dashboard.vue';
 @Component({
   components:{
     ysHeader,
     Guangzhou,
-    options
+    dashBoard
   }
 }
 )
