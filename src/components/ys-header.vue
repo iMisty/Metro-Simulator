@@ -12,6 +12,10 @@
       </div>
       <div class="header-title">{{title}}</div>
     </div>
+    <div class="header-right flex row center">
+      <img src="../../src/assets/color.svg" alt="">
+      <img src="../../src/assets/github.svg" alt="">
+    </div>
     <ys-sidebar :class="{'sidebar-selected' : isSideBarClicked}"></ys-sidebar>
   </div>
 </template>
