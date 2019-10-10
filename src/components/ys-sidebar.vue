@@ -4,15 +4,17 @@
 </div>
 </template>
 
-<script lang="ts">
-import { Component, Prop, Vue, Watch } from 'vue-property-decorator';
-@Component({
-components:{
+<script>
+export default {
+  name: 'ys-sidebar',
+  data(){
+    return{
 
-}
-})
-export default class ysSidebar extends Vue{
-
+    }
+  },
+  methods: {
+    
+  }
 }
 </script>
 <style lang="less" scoped>

@@ -13,25 +13,20 @@
   </label>
 </template>
 
-<script lang="ts">
-import { Component, Prop, Vue, Watch } from "vue-property-decorator";
-@Component({
-  components: {}
-})
-export default class ysNumber extends Vue {
-  private inputNumber: Number = 1;
-  @Prop({
-    type: String,
-    required: true,
-    default: "Default Value"
-  })
-  title!: String;
-  @Prop(Number)
-  min!: Number;
-  @Prop(Number)
-  max!: Number;
-  @Prop(String)
-  defaultPlaceholder!: String;
+<script>
+export default {
+  name: 'ys-number',
+  props:{
+    title: String,
+    min: Number,
+    max: Number,
+    defaultPlaceholder: String
+  },
+  data(){
+    return{
+      inputNumber: 1
+    }
+  }
 }
 </script>
 <style lang="less" scoped>

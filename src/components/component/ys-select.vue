@@ -9,19 +9,13 @@
     </label>
 </template>
 
-<script lang="ts">
-import { Component, Prop, Vue, Watch } from "vue-property-decorator";
-@Component({
-  components: { }
-})
-
-export default class ysSelect extends Vue {
-  @Prop({
-    type: String,
-    required: true,
-    default: 'Default Value'
-  })title !: string;
-  @Prop()items !: Array<String>;
+<script>
+export default {
+  name: 'ys-select',
+  props:{
+    title: String,
+    items: Object
+  }
 }
 </script>
 <style lang="less" scoped>

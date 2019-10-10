@@ -48,11 +48,11 @@
         </article>
       </section>
     </div>
-    </div>
+  </div>
 </template>
 
 <style lang="less" scoped>
-#home{
+#home {
   position: relative;
   display: flex;
   flex-direction: row;
@@ -89,44 +89,45 @@
 </style>
 
 <script>
-import { Component, Prop, Vue, Watch } from 'vue-property-decorator';
 import html2canvas  from 'html2canvas';
-import dashBoard from '@/components/dashboard.vue';
-import buttons from '@/components/output.vue';
+import dashBoard from '@/components/dashboard';
+import buttons from '@/components/output';
 
-@Component({
-  components:{
+export default {
+  components: {
     dashBoard,buttons
-  }
-})
-
-export default class guangzhou extends Vue {
-  // data
-  private sStation:string = '芝士橙';
-  private eStation:string = 'Sino-Singapore Guangzhou Knowledge City';
-  private sNext:string = '枫下';
-  private eNext:string = 'Fengxia';
-  private Line:string = '14';
-  private nStation:string =  '40';
-  private platform:string =  '4';
-  private color:string =  'line14';
-  private htmlUrl:string =  '';
-  private isAPM:boolean =  false;
-  // mounted
-  mounted() {
-    this.getAPM();
-  }
-  // methods
-    private getAPM() {
-      let line = this.$data.line;
+  },
+  data(){
+    return{
+      sStation = '芝士橙',
+      eStation = 'Sino-Singapore Guangzhou Knowledge City',
+      sNext = '枫下',
+      eNext = 'Fengxia',
+      Line = '14',
+      nStation =  '40',
+      platform=  '4',
+      color =  'line14',
+      htmlUrl =  '',
+      isAPM =  false
+    }
+  },
+  mounted (){
+      this.getAPM;
+    },
+    methods: {
+      getAPM(){
+        let line = this.$data.line;
       if(line === 'APM'){
         this.$data.isAPM = true;
       }
+      }
+    },
+    computed: {
+      getColor(){
+        return this.$data.color = 'line' + this.$data.Line;
+      }
     }
-  // computed
-    get getColor(){
-      return this.$data.color = 'line' + this.$data.Line;
-    }
+}
   /*
   @watch()
     'sStation': function(){ this.getSStation(); },
@@ -136,5 +137,4 @@ export default class guangzhou extends Vue {
     'Line': function(){ this.getLine(); },
     'nStation': function(){ this.getNStation(); },
   */
-}
 </script>

@@ -20,27 +20,30 @@
   </div>
 </template>
 
-<script lang="ts">
-import { Component, Prop, Vue, Watch } from "vue-property-decorator";
-import ysSidebar from "@/components/ys-sidebar.vue";
+<script>
+import ysSidebar from "@/components/ys-sidebar";
 @Component({
   components: {
     ysSidebar
   }
 })
-export default class ysHeader extends Vue {
-  @Prop({
-    type: String,
-    required: false,
-    default: "标题正在神游"
-  })
-  title!: string;
-
-  // data
-  private isSideBarClicked: boolean = false;
-  // methods
-  private sidebarOpen() {
-    return (this.isSideBarClicked = !this.isSideBarClicked);
+export default {
+  name: 'ys-sidebar',
+  components: {
+    ysSidebar
+  },
+  props: {
+    title: String
+  },
+  data(){
+    return{
+      isSideBarClicked : false
+    }
+  },
+  methods: {
+    sidebarOpen(){
+      return this.$data.isSideBarClicked = !this.$data.isSideBarClicked;
+    }
   }
 }
 </script>

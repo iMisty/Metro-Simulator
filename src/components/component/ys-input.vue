@@ -5,33 +5,28 @@
   </label>
 </template>
 
-<script lang="ts">
-import { Component, Prop, Vue, Emit } from "vue-property-decorator";
-@Component({
-  components: {}
-})
-export default class ysInput extends Vue {
-  private inputSelected:boolean = false;
-  private inputText:string = '';
-
-  @Prop({
-    type: String,
-    required: true,
-    default: 'Default Value'
-  })
-  title !: string;
-
-  //@Emit('inputTitle')send(inputTitle:string){};
-
-  // 选中时改变框体
-  private click() {
-    this.inputSelected = true;
-  }
-  private blur(){
-    if(this.inputText === ''){
-      this.inputSelected = false;
-    }else{
-      return;
+<script>
+export default {
+  name: ys-input,
+  props: {
+    title: String
+  },
+  data(){
+    return{
+      inputSelected: false,
+      inputText: ''
+    }
+  },
+  methods:{
+    click(){
+      return this.$data.inputSelected = true;
+    },
+    blur(){
+      if(this.$data.inputText === ''){
+        this.$data.inputSelected = false;
+      }else{
+        return;
+      }
     }
   }
 }

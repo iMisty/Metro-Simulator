@@ -23,8 +23,7 @@
   </div>
 </template>
 
-<script lang="ts">
-import { Component, Prop, Vue, Watch } from 'vue-property-decorator';
+<script>
 import ysInput from '@/components/component/ys-input.vue';
 import ysSelect from '@/components/component/ys-select.vue';
 import ysCheckbox from '@/components/component/ys-checkbox.vue';
@@ -32,30 +31,27 @@ import ysNumber from '@/components/component/ys-number.vue';
 import ysButton from '@/components/component/ys-button.vue';
 @Component({
 components:{
-  ysInput,ysSelect,ysCheckbox,ysNumber,ysButton
 }
 })
-export default class dashBoard extends Vue{
-  private chNowStation:string = '当前站(中文)';
-  private enNowStation:string = '当前站(英文)';
-  private chNextStation:string = '下一站(中文)';
-  private enNextStation:string = '下一站(英文)';
-  private line:string = '线路编号';
-  private platform:string = '站台编号';
-  private StationNumTitle:string = '站点编号';
-  private BarrierTitle:string = '屏蔽门编号';
-  private isEnd:string = '是否为终点站';
-  private isExpress:string = '是否为快车';
-  private createImg:string = '生成图片';
-  private downloadImg:string = '下载图片';
-
-  private Line:string = '';
-
-  getLine(){
-    console.log(this.$emit);
-  }
-  
-  private listData:Object[] = [
+export default{
+  components: {
+      ysInput,ysSelect,ysCheckbox,ysNumber,ysButton
+  },
+  data(){
+    return{
+      chNowStation :'当前站(中文)',
+      enNowStation :'当前站(英文)',
+      chNextStation :'下一站(中文)',
+      enNextStation :'下一站(英文)',
+      line :'线路编号',
+      platform :'站台编号',
+      StationNumTitle :'站点编号',
+      BarrierTitle :'屏蔽门编号',
+      isEnd :'是否为终点站',
+      isExpress :'是否为快车',
+      createImg :'生成图片',
+      downloadImg :'下载图片',
+      listData: [
     {'data':'1号线','value':'1'},
     {'data':'2号线','value':'2'},
     {'data':'3号线','value':'3'},
@@ -82,7 +78,9 @@ export default class dashBoard extends Vue{
     {'data':'广佛线','value':'gf'},
     {'data':'广佛肇环线','value':'gfz'},
     {'data':'APM线','value':'apm'},
-    ];
+    ]
+    }
+  }
 }
 </script>
 <style lang="less" scoped>

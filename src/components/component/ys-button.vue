@@ -4,18 +4,17 @@
   </div>
 </template>
 
-<script lang="ts">
-import { Component, Prop, Vue, Watch } from "vue-property-decorator";
-@Component({
-  components: {}
-})
-export default class ysButton extends Vue {
-  @Prop({
-    type: String,
-    required: true,
-    default: "Button"
-  })
-  title!: String;
+<script>
+export default {
+  name: ys-button,
+  props:{
+    title: String
+  },
+  data(){
+    return{
+      title: ''
+    }
+  }
 }
 </script>
 <style lang="less" scoped>

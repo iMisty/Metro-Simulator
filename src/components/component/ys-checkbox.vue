@@ -5,18 +5,16 @@
   </label>
 </template>
 
-<script lang="ts">
-import { Component, Prop, Vue, Watch } from "vue-property-decorator";
-@Component({
-  components: {}
-})
-export default class ysCheckbox extends Vue {
-  @Prop({
-    type: String,
-    required: true,
-    default: 'Default Value'
-  })
-  title !: string;
+<script>
+export default  {
+  props:{
+    title: String
+  },
+  data(){
+    return{
+      title: ''
+    }
+  }
   
 }
 </script>
