@@ -6,30 +6,37 @@
   </div>
 </template>
 
-<script lang="ts">
+<script>
 import {Component, Prop, Vue} from "vue-property-decorator";
 import ysHeader from '@/components/ys-header.vue';
 import Guangzhou from '@/views/Guangzhou-APM.vue';
 import dashBoard from '@/components/dashboard.vue';
-@Component({
+
+export default{
+  name: 'App',
   components:{
     ysHeader,
     Guangzhou,
     dashBoard
-  }
-}
-)
-export default class App extends Vue {
-  private headerTitle:String = '昆特牌 提琴 烤蛋挞 苏打 马拉松';
-  private title:string = 'test';
-
-  // 娱乐用
-  private changeTitle(){
-    return this.headerTitle = '㱎䖘䵈 䶁䘔 䶑䘓鋱 䩳䵷 㒪䪉䉥';
-  }
-  private restoreTitle(){
-    return this.headerTitle = '昆特牌 提琴 烤蛋挞 苏打 马拉松';
-  }
+  },
+  data(){
+    return{
+      headerTitle : '昆特牌 提琴 烤蛋挞 苏打 马拉松',
+      title : 'test'
+    }
+  },
+  mounted() {
+    
+  },
+  methods: {
+    // 娱乐用
+    changeTitle(){
+      return this.$data.headerTitle = '㱎䖘䵈 䶁䘔 䶑䘓鋱 䩳䵷 㒪䪉䉥';
+    },
+    restoreTitle(){
+      return this.$data.headerTitle = '昆特牌 提琴 烤蛋挞 苏打 马拉松';
+    }
+  },
 }
 </script>
 
