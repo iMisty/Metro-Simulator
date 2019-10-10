@@ -88,9 +88,9 @@
 }
 </style>
 
-<script lang="ts">
+<script>
 import { Component, Prop, Vue, Watch } from 'vue-property-decorator';
-import  html2canvas  from 'html2canvas';
+import html2canvas  from 'html2canvas';
 import dashBoard from '@/components/dashboard.vue';
 import buttons from '@/components/output.vue';
 
