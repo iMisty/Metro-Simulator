@@ -1,29 +1,102 @@
-# simulator
+# 地铁站牌生成模拟器
 
-## Project setup
-```
-npm install
-```
+## 项目说明
+一个提供地铁站牌生成的模拟器
 
-### Compiles and hot-reloads for development
-```
-npm run serve
-```
+首发于地铁族,因此大小与地铁族论坛最大支持签名档大小同步(700 × 166)
 
-### Compiles and minifies for production
-```
-npm run build
-```
+## 目前状况
 
-### Run your tests
-```
-npm run test
-```
+- 使用Material UI重构
+- ~~使用TypeScript重构(天坑×1)~~
+- 使人犯困的夜间模式(天坑×2)
+- 图片使用SVG重绘
+- 多种样式选择
 
-### Lints and fixes files
-```
-npm run lint
-```
+### 优先处理
 
-### Customize configuration
-See [Configuration Reference](https://cli.vuejs.org/config/).
+- 右边药丸边框缺失问题
+
+- 组件位置重构下
+
+- 数据使用Vuex存储
+
+
+[ ]北京版: 咕咕咕咕咕咕
+
+[ ]上海版: 咕咕咕咕咕咕
+
+[x]广州版v1.1.0: 已经可以正常生成
+
+[ ]深圳版: 咕咕咕咕咕咕
+
+~~其他城市敬请期待~~
+
+## 在线体验
+https://imisty.github.io/Metro-Simulator/dist/index.html
+
+## 离线测试步骤
+
+请确定您的计算机已安装Node.js
+
+打开命令行模式,键入命令
+
+> git clone https://github.com/iMisty/Metro-Simulator.git
+
+> cd Metro-Simulator
+
+> npm install
+
+Enjoy
+
+## TODO
+[x]字体优化
+
+[x]增加文字限制
+
+[x]增加药丸颜色对应
+
+[]开启APM线对应
+
+[]增加其他站台方向对应
+
+[]增加终点站对应
+
+[]针对14号线等提供快车模式站点对应
+
+[x]提高清晰度
+
+[]Grid布局界面
+
+[]优化对移动终端的支持
+
+[]UI优化(Material化)
+
+[]多城市对应
+
+[]多终端对应
+
+## 更新日志
+### v1.0.15 (20190922)
+- 修复警告灯颜色
+- 增加药丸颜色随线路选择转换
+- 调整药丸内部文字排版
+- 换了个logo
+### v1.0.12 (20190921)
+- 修改底部颜色条纹大小
+- 调整底部警告灯样式(与APM线对应)
+### v1.0.10 (20190920)
+- 增加对线路/文字的限制
+> 汉字限制6个,英文限制40字符
+- 站点设置处优化
+> 站点设置处设置为仅限数字,限制大小为-9~99
+- 修改主要文字字体
+- 修改主要文字字体粗细
+- 增加对线路的对应
+- 增加部分对移动端的支持
+- 删除对横滚动条的限制
+- 限制文字行数为2行
+- 增加对文本框的文字提示
+- 优化交互友好性
+### v1.0.0
+完成
