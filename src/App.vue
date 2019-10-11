@@ -1,13 +1,12 @@
 <template>
   <div id="app">
-    <ys-header :title="headerTitle" @mouseover.native="changeTitle()" @mouseout.native="restoreTitle()"></ys-header>
+    <ys-header :title="headerTitle"></ys-header>
     <Guangzhou></Guangzhou>
     <dash-board></dash-board>
   </div>
 </template>
 
 <script>
-import {Component, Prop, Vue} from "vue-property-decorator";
 import ysHeader from '@/components/ys-header.vue';
 import Guangzhou from '@/views/Guangzhou-APM.vue';
 import dashBoard from '@/components/dashboard.vue';
@@ -21,22 +20,10 @@ export default{
   },
   data(){
     return{
-      headerTitle : '昆特牌 提琴 烤蛋挞 苏打 马拉松',
-      title : 'test'
+      headerTitle: '昆特牌 提琴 烤蛋挞 苏打 马拉松',
+      title: 'test'
     }
-  },
-  mounted() {
-    
-  },
-  methods: {
-    // 娱乐用
-    changeTitle(){
-      return this.$data.headerTitle = '㱎䖘䵈 䶁䘔 䶑䘓鋱 䩳䵷 㒪䪉䉥';
-    },
-    restoreTitle(){
-      return this.$data.headerTitle = '昆特牌 提琴 烤蛋挞 苏打 马拉松';
-    }
-  },
+  }
 }
 </script>
 

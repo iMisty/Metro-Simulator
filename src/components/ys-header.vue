@@ -22,13 +22,9 @@
 
 <script>
 import ysSidebar from "@/components/ys-sidebar";
-@Component({
-  components: {
-    ysSidebar
-  }
-})
+
 export default {
-  name: 'ys-sidebar',
+  name: 'ys-header',
   components: {
     ysSidebar
   },

@@ -4,14 +4,9 @@
 </div>
 </template>
 
-<script lang="ts">
-import { Component, Prop, Vue, Watch } from 'vue-property-decorator';
-@Component({
-components:{
+<script>
 
-}
-})
-export default class GuangzhouSide extends Vue{
+export default {
 
 }
 </script>

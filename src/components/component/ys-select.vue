@@ -14,7 +14,7 @@ export default {
   name: 'ys-select',
   props:{
     title: String,
-    items: Object
+    items: Array
   }
 }
 </script>

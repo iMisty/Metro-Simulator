@@ -7,7 +7,7 @@
 
 <script>
 export default {
-  name: ys-input,
+  name: 'ys-input',
   props: {
     title: String
   },

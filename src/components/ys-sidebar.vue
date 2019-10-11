@@ -18,5 +18,20 @@ export default {
 }
 </script>
 <style lang="less" scoped>
-
+// 控制侧边栏操作
+.ys-sidebar{
+  position: fixed;
+  bottom: 0;
+  left: -100%;
+  width: 32vw;
+  z-index: 4;
+  height: calc(100vh - 64px);
+  background-color: #fff;
+  box-shadow: 0 4px 12px rgba(0,0,0,.08);
+  transition-duration: .6s;
+}
+.sidebar-selected{
+  left: 0;
+  transition: left .6s ease;
+}
 </style>

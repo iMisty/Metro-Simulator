@@ -89,26 +89,24 @@
 </style>
 
 <script>
-import html2canvas  from 'html2canvas';
 import dashBoard from '@/components/dashboard';
-import buttons from '@/components/output';
 
 export default {
   components: {
-    dashBoard,buttons
+    dashBoard
   },
   data(){
     return{
-      sStation = '芝士橙',
-      eStation = 'Sino-Singapore Guangzhou Knowledge City',
-      sNext = '枫下',
-      eNext = 'Fengxia',
-      Line = '14',
-      nStation =  '40',
-      platform=  '4',
-      color =  'line14',
-      htmlUrl =  '',
-      isAPM =  false
+      sStation : '芝士橙',
+      eStation : 'Sino-Singapore Guangzhou Knowledge City',
+      sNext : '枫下',
+      eNext : 'Fengxia',
+      Line : '14',
+      nStation :  '40',
+      platform:  '4',
+      color :  'line14',
+      htmlUrl :  '',
+      isAPM :  false
     }
   },
   mounted (){

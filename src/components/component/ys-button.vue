@@ -6,13 +6,13 @@
 
 <script>
 export default {
-  name: ys-button,
+  name: 'ys-button',
   props:{
     title: String
   },
   data(){
     return{
-      title: ''
+      //title: ''
     }
   }
 }

@@ -7,7 +7,7 @@
       <ys-input :title="enNextStation"></ys-input>
     </section>
     <section class="options-station-select flex row">
-      <ys-select :title="line" :items="listData" v-model="Line" @change="getLine()"></ys-select>
+      <ys-select :title="line" :items="listData"></ys-select>
       <ys-select :title="platform"></ys-select>
       <ys-number :title="StationNumTitle" :min="-9" :max="99"></ys-number>
       <ys-number :title="BarrierTitle" :min="1" :max="99"></ys-number>
@@ -29,10 +29,7 @@ import ysSelect from '@/components/component/ys-select.vue';
 import ysCheckbox from '@/components/component/ys-checkbox.vue';
 import ysNumber from '@/components/component/ys-number.vue';
 import ysButton from '@/components/component/ys-button.vue';
-@Component({
-components:{
-}
-})
+
 export default{
   components: {
       ysInput,ysSelect,ysCheckbox,ysNumber,ysButton
