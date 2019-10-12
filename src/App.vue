@@ -8,7 +8,7 @@
 
 <script>
 import ysHeader from '@/components/ys-header.vue';
-import Guangzhou from '@/views/Guangzhou-APM.vue';
+import Guangzhou from '@/components/station.vue';
 import dashBoard from '@/components/dashboard.vue';
 
 export default{
