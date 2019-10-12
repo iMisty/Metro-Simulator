@@ -1,6 +1,6 @@
 <template>
 <div class="ys-sidebar">
-  Test
+  Test8
 </div>
 </template>
 
