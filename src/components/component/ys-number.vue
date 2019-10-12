@@ -6,7 +6,6 @@
       type="number"
       :min="min"
       :max="max"
-      maxlength="2"
       v-model="inputNumber"
       :placeholder="defaultPlaceholder"
     />
@@ -26,7 +25,8 @@ export default {
     return{
       inputNumber: 1
     }
-  }
+  },
+
 }
 </script>
 <style lang="less" scoped>

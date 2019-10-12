@@ -77,7 +77,7 @@ export default{
     {'data':'APM线','value':'apm'},
     ]
     }
-  }
+  },
 }
 </script>
 <style lang="less" scoped>

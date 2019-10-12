@@ -3,7 +3,7 @@
       <h3 class="ys-select-title">{{title}}</h3>
         <select class="ys-select" name="line">
           <option v-for="list in items" :value="list.value">
-          {{list.data}}
+            {{list.data}}
           </option>
         </select>
     </label>
