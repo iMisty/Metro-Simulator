@@ -1,7 +1,7 @@
 <template>
     <div class="medic flex row center">
-      <span class="medic-left flex center" :class="[getColor]">{{ line }}</span>
-      <span class="medic-right flex center" :class="[getColor]">{{ num }}</span>
+      <span class="medic-left flex center">{{ line }}</span>
+      <span class="medic-right flex center">{{ num }}</span>
     </div>
 </template>
 
