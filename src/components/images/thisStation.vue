@@ -34,11 +34,11 @@ export default {
 </script>
 <style lang='less' scoped>
   h1.ch-this-station{
-    font-size: 6rem;
+    font-size: 5.12rem;
     font-weight: 600;
   }
   h2.en-this-station{
-    font-size: 2.8rem;
+    font-size: 2.4rem;
     line-height: 1;
     font-weight: 500;
   }
