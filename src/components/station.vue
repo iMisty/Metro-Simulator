@@ -27,7 +27,7 @@ export default {
     },
     data() {
         return {
-          sStation : '芝士橙',
+          sStation : '',
           eStation : 'Sino-Singapore Guangzhou Knowledge City',
           sNext : '枫下',
           eNext : 'Fengxia',
@@ -37,7 +37,11 @@ export default {
           color :  'line14',
         };
     },
-    computed: {},
+    computed: {
+      state(){
+        
+      }
+    },
     watch: {},
     methods: {},
     created() {},
