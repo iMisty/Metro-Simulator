@@ -38,9 +38,6 @@ export default {
         };
     },
     computed: {
-      state(){
-        
-      }
     },
     watch: {},
     methods: {},

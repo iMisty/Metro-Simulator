@@ -1,7 +1,7 @@
 <template>
   <div class="platform flex column center">
     <article class="platform-wrap">
-      <h4>{{platform}}</h4>
+      <h4>{{ this.$store.state.platform }}</h4>
       <h5>站台</h5>
       <h6>Platform</h6>
     </article>

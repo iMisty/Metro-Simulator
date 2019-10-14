@@ -1,6 +1,6 @@
 <template>
     <div class="barrier flex column">
-      <h1 class="barrier-num">{{num}}</h1>
+      <h1 class="barrier-num">{{this.$store.state.barrier}}</h1>
       <h3>屏蔽门</h3>
     </div>
 </template>

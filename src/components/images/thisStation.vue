@@ -1,7 +1,7 @@
 <template>
     <div class="img-this-station flex column">
-      <h1 class="ch-this-station">{{chThisStation}}</h1>
-      <h2 class="en-this-station">{{enThisStation}}</h2>
+      <h1 class="ch-this-station">{{this.$store.state.chThisStation}}</h1>
+      <h2 class="en-this-station">{{this.$store.state.enThisStation}}</h2>
     </div>
 </template>
 

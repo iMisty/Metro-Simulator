@@ -5,8 +5,8 @@
       <h3 class="en-next-title">Next</h3>
     </article>
     <article class="flex column next-text">
-      <h2 class="ch-next-text">{{ chNextStation }}</h2>
-      <h3 class="en-next-text">{{ enNextStation }}</h3>
+      <h2 class="ch-next-text">{{ this.$store.state.chNextStation }}</h2>
+      <h3 class="en-next-text">{{ this.$store.state.enNextStation }}</h3>
     </article>
   </div>
 </template>

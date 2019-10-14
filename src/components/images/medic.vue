@@ -1,7 +1,7 @@
 <template>
     <div class="medic flex row center">
-      <span class="medic-left flex center">{{ line }}</span>
-      <span class="medic-right flex center">{{ num }}</span>
+      <span class="medic-left flex center">{{ this.$store.state.Line }}</span>
+      <span class="medic-right flex center">{{ this.$store.state.StationNumber }}</span>
     </div>
 </template>
 
