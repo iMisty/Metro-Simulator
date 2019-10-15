@@ -1,6 +1,6 @@
 <template>
   <label class="ys-switch flex row">
-    <input type="checkbox" name class="ys-switch-checkbox" />
+    <input type="checkbox" class="ys-switch-checkbox" v-model="status" @click="send"/>
     <h3 class="ys-switch-text">{{title}}</h3>
   </label>
 </template>
@@ -8,12 +8,20 @@
 <script>
 export default  {
   props:{
-    title: String
+    title: String,
   },
   data(){
     return{
       //title: ''
+      status: false
     }
+  },
+  methods: {
+    send() {
+　　　　　//第一个参数自定义abc的函数
+        //第二个参数this.childValue是需要传的值
+        this.$emit('status', this.status)
+      }
   }
   
 }

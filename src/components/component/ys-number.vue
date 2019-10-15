@@ -19,13 +19,18 @@ export default {
     title: String,
     min: Number,
     max: Number,
-    defaultPlaceholder: String
+    defaultPlaceholder: String,
   },
   data(){
     return{
       inputNumber: 1
     }
   },
+  methods: {
+    numbers(){
+      this.$emit('childByValue',this.childValue);
+    }
+  }
 
 }
 </script>

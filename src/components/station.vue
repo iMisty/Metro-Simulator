@@ -1,11 +1,11 @@
 <template>
     <div class="station-wrap">
-      <next-station :chNextStation="sNext" :enNextStation="eNext" class="module-next-station"></next-station>
-      <arrow class="module-arrow module-arrow-island"></arrow>
-      <this-station :chThisStation="sStation" :enThisStation="eStation" class="module-this-station"></this-station>
-      <arrow class="module-arrow module-arrow-side" :isSideStation="true"></arrow>
-      <medic class="module-medic" :line="Line" :num="nStation"></medic>
-      <platform :platform="platform" class="module-platform"></platform>
+      <next-station class="module-next-station" v-if="isEnd"></next-station>
+      <div><arrow class="module-arrow module-arrow-island" v-if="isIslandStation"></arrow></div>
+      <this-station class="module-this-station"></this-station>
+      <div><arrow class="module-arrow module-arrow-side" :isSideStation="true" v-if="isSideStation"></arrow></div>
+      <medic class="module-medic"></medic>
+      <platform class="module-platform"></platform>
       <light class="module-light"></light>
       <bottom class="module-bottom"></bottom>
     </div>
@@ -27,14 +27,9 @@ export default {
     },
     data() {
         return {
-          sStation : '',
-          eStation : 'Sino-Singapore Guangzhou Knowledge City',
-          sNext : '枫下',
-          eNext : 'Fengxia',
-          Line : '14',
-          nStation :  '40',
-          platform:  '4',
-          color :  'line14',
+          isEnd: true,
+          isIslandStation: false,
+          isSideStation: true
         };
     },
     computed: {

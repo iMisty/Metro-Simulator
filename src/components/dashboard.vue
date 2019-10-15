@@ -13,8 +13,8 @@
       <ys-number :title="BarrierTitle" :min="1" :max="99"></ys-number>
     </section>
     <section class="options-station-check flex row">
-      <ys-checkbox class="center" :title="isEnd"></ys-checkbox>
-      <ys-checkbox class="center" :title="isExpress"></ys-checkbox>
+      <ys-checkbox class="center" :title="isEnd" @status="getIsEnd"></ys-checkbox>
+      <ys-checkbox class="center" :title="isExpress" @status="getIsExpress"></ys-checkbox>
     </section>
     <section class="option-station-button flex row center">
       <ys-button :title="createImg"></ys-button>
@@ -75,9 +75,22 @@ export default{
     {'data':'广佛线','value':'gf'},
     {'data':'广佛肇环线','value':'gfz'},
     {'data':'APM线','value':'apm'},
-    ]
+    ],
+    booleanEnd:'',
+    booleanExpress: ''
     }
   },
+  methods:{
+    getIsEnd: function (childValue) {
+        // childValue就是子组件传过来的值
+        this.booleanEnd = !childValue;
+        console.log(`终点站选项:${this.booleanEnd}`);
+      },
+      getIsExpress: function(childValue){
+        this.booleanExpress = !childValue;
+        console.log(`快车选项: ${this.booleanExpress}`)
+      }
+  }
 }
 </script>
 <style lang="less" scoped>

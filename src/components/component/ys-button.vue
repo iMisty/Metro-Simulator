@@ -8,12 +8,17 @@
 export default {
   name: 'ys-button',
   props:{
-    title: String
+    title: String,
+    status: Boolean
   },
   data(){
     return{
       //title: ''
+      //status: false
     }
+  },
+  methods:{
+    
   }
 }
 </script>
