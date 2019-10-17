@@ -13,7 +13,7 @@
       <ys-number :title="BarrierTitle" :min="1" :max="99"></ys-number>
     </section>
     <section class="options-station-check flex row">
-      <ys-checkbox class="center" :title="isEnd" @status="getIsEnd"></ys-checkbox>
+      <ys-checkbox class="center" :title="isEnd" @click="getIsEnd()"></ys-checkbox>
       <ys-checkbox class="center" :title="isExpress" @status="getIsExpress"></ys-checkbox>
     </section>
     <section class="option-station-button flex row center">
@@ -81,10 +81,10 @@ export default{
     }
   },
   methods:{
-    getIsEnd: function (childValue) {
+    getIsEnd: function () {
         // childValue就是子组件传过来的值
-        this.booleanEnd = !childValue;
-        console.log(`终点站选项:${this.booleanEnd}`);
+        console.log('a');
+        this.$store.dispatch('changeStatus');
       },
       getIsExpress: function(childValue){
         this.booleanExpress = !childValue;
