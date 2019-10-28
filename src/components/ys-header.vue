@@ -13,7 +13,7 @@
       <div class="header-title">{{title}}</div>
     </div>
     <div class="header-right flex row center">
-      <img src="../../src/assets/color.svg" alt="">
+      <img src="../../src/assets/commenting.svg" alt="">
       <img src="../../src/assets/github.svg" alt="">
     </div>
     <ys-sidebar :class="{'sidebar-selected' : isSideBarClicked}"></ys-sidebar>
@@ -116,5 +116,13 @@ div.menu-icon {
   font-size: 24px;
   color: #fff;
   font-weight: 600;
+}
+.header-right{
+  img{
+    width: 3.2rem;
+    height: 3.2rem;
+    margin: .8rem;
+    filter: invert(1);
+  }
 }
 </style>

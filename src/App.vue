@@ -1,22 +1,25 @@
 <template>
   <div id="app">
     <ys-header :title="headerTitle"></ys-header>
-    <Guangzhou></Guangzhou>
+    <station class="border-1"></station>
     <dash-board></dash-board>
+    <ys-footer></ys-footer>
   </div>
 </template>
 
 <script>
 import ysHeader from '@/components/ys-header.vue';
-import Guangzhou from '@/components/station.vue';
+import station from '@/components/station.vue';
 import dashBoard from '@/components/dashboard.vue';
+import ysFooter from '@/components/footer.vue'
 
 export default{
   name: 'App',
   components:{
     ysHeader,
-    Guangzhou,
-    dashBoard
+    station,
+    dashBoard,
+    ysFooter
   },
   data(){
     return{
@@ -42,6 +45,10 @@ export default{
   .options{
     width: 800px;
     padding: 32px;
+  }
+  .border-1{
+    margin-top: 16px;
+    border: 1px solid #222;
   }
 }
 </style>

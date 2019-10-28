@@ -13,12 +13,22 @@ export default new Vuex.Store({
         StationNumber: '40',
         platform: '4',
         color: 'line14',
-        barrier: '4'
+        barrier: '4',
+        isOptions: {
+            isEnd: false,
+            isExpress: false,
+            isIsland: true,
+            isSide: true
+        }
     },
     mutations: {
-
+        changeStatus(state){
+            state.isOptions.isEnd != state.isOptions.isEnd;
+        }
     },
     actions: {
-
+        changeStatus(context){
+            context.commit('changeStatus');
+        }
     }
 })
